@@ -1,0 +1,33 @@
+{
+  "name": "damian-balas",
+  "version": "1.0.0",
+  "description": "Personal Portfolio",
+  "main": "./dist/js/main.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/damian-balas/damian-balas.git"
+  },
+  "keywords": [
+    "Portfolio",
+    "Damian",
+    "Balas"
+  ],
+  "author": "Damian Balas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/damian-balas/damian-balas/issues"
+  },
+  "homepage": "https://github.com/damian-balas/damian-balas#readme",
+  "devDependencies": {
+    "eslint": "^6.2.2",
+    "eslint-config-standard": "^14.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^2.0.1"
+  }
+}
