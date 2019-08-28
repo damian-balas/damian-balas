@@ -1,0 +1,510 @@
+// Mixins
+=font-face($family, $path, $weight: normal, $style: normal)
+  @font-face
+    font-family: $family
+    font-display: auto
+    src: local($family), url('#{$path}.ttf') format('truetype')
+    font-weight: $weight
+    font-style: $style 
+
++font-face('Josefin Sans', './fonts/Josefin-Sans/JosefinSans-Light', 300)
++font-face('Josefin Sans', './fonts/Josefin-Sans/JosefinSans-Regular', 400)
++font-face('Josefin Sans', './fonts/Josefin-Sans/JosefinSans-SemiBold', 600)
+    
+* 
+    padding: 0
+    margin: 0
+
+*, *::before, *::after
+    box-sizing: inherit
+
+html
+    font-family: Josefin Sans, Ubuntu, sans-serif
+    line-height: 1.5
+    box-sizing: border-box
+    color: #343434
+
+body
+    background: url('../img/tic-tac-toe.png')
+    position: relative
+
+.bold
+    font-weight: bold
+
+.semi-transparent
+    opacity: 0.5
+
+.sr-only
+    border: 0 !important
+    clip: rect(1px, 1px, 1px, 1px) !important
+    clip-path: inset(50%) !important
+    height: 1px !important
+    margin: -1px !important
+    overflow: hidden !important
+    padding: 0 !important
+    position: absolute !important
+    width: 1px !important
+    white-space: nowrap !important
+
+.highlight
+    transition: all .2s
+    position: absolute
+    top: -10rem
+    left: 0
+    height: 34px
+    width: 34px
+    background: #4ea4bf
+    z-index: -1
+    display: block
+    transform: translateX(calc(-50%)) rotate(45deg) 
+    transform-origin: center
+
+.hover-line
+    display: inline-block
+    color: white
+    font-weight: 600
+    line-height: initial
+    text-decoration: none
+    &::after
+        content: ''
+        display: block
+        height: 2px
+        width: 0
+        border-radius: 0.5rem
+        background: white
+        transition: width .3s ease-in-out
+    &:hover::after
+        width: 100%
+
+.site-header
+    z-index: 100
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 5rem
+    display: flex
+    align-items: center
+    padding: 0 1rem
+    justify-content: space-between
+    overflow-x: hidden
+    &__logo
+        color: white
+        font-weight: 300
+        line-height: 1
+        text-transform: uppercase
+        font-size: 1.2rem
+        .bold 
+            font-weight: inherit
+            letter-spacing: 4.8px
+    .site-nav
+        background: #ffffff
+        width: 100%
+        position: absolute
+        right: 0
+        top: 0
+        box-shadow: 0px 0px 20px #343434
+        transform: translateX(120%)
+        transition: transform .3s ease
+        &__ul
+            list-style: none
+            width: 80%
+            height: 5rem
+            display: flex
+            flex-direction: row
+        &__li
+            flex: 1
+            display: flex
+            align-items: center
+            justify-content: center
+        &__link
+            width: 100%
+            height: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+            text-align: center
+            text-decoration: none
+            color: #343434
+            transition: transform .2s ease
+            &:focus, &:hover
+                transform: scale(1.1)
+        &.show
+            transform: translateX(0)
+            position: fixed
+            z-index: 100
+    .hamburger
+        height: 3rem
+        width: 3rem
+        border: none
+        position: fixed
+        right: 1rem
+        z-index: 100
+        background: transparent
+        cursor: pointer
+        &__line
+            height: 4px
+            width: 85%
+            border-radius: 3px
+            background-color: #fff
+            position: absolute
+            top: 30%
+            right: 0
+            transition: all .15s ease-in-out
+            
+            &:nth-of-type(2)
+                width: 75%
+                top: 50%
+            &:nth-of-type(3)
+                width: 65%
+                top: 70%    
+        &:hover .hamburger__line
+            width: 85%
+        &:hover, &:focus
+            opacity: 0.7
+            transform: scale(1.1)
+        &.is-active
+            .hamburger__line:nth-of-type(1)
+                transform: rotate(45deg) scale(0.6)
+                top: 45%
+            .hamburger__line:nth-of-type(2)                  
+                opacity: 0
+            .hamburger__line:nth-of-type(3)    
+                transform: rotate(-45deg) scale(0.6)
+                top: 45%
+            .hamburger__line
+                opacity: 1
+                width: 85%
+                background-color: #343434 
+                transform-origin: center
+.hero
+    padding-top: 7.5rem
+    height: 30rem
+    position: relative
+    background: linear-gradient(to right top, #8cc7c3, #6bb6c0, #4ea4bf, #3e90bc, #437ab4), url('../img/gplaypattern.png')
+    background-blend-mode: multiply
+    &__text, &__heading
+        color: white
+        padding-left: 1rem
+    &__heading
+        font-size: 2.1rem
+        font-weight: 300
+    &__text
+        font-size: 1.2rem
+    .scroll-down
+        position: absolute
+        bottom: 6.5rem
+        left: 50%
+        font-weight: 300
+        transform: translateX(-50%)
+        text-decoration: none
+        color: white
+        transition: opacity .3s
+        padding-top: 4.5rem
+        &:hover
+            opacity: .5
+        &__line
+            position: absolute
+            top: 0
+            left: 50%
+            width: 1.5rem
+            height: 1.5rem
+            margin-left: -0.75rem
+            border-left: 1px solid white
+            border-bottom: 1px solid white
+            transform: rotate(-45deg)
+            opacity: 0
+            animation: chevorFade 2s infinite
+            &:nth-last-of-type(1)
+                animation-delay: 0s
+            &:nth-of-type(2)
+                animation-delay: .15s
+                top: 1rem
+            &:nth-of-type(3)
+                top: 2rem
+                animation-delay: .3s
+                
+            @keyframes chevorFade
+                0%
+                    opacity: 0
+                50%
+                    opacity: 1
+                100%
+                    opacity: 0
+
+.about-me
+    margin: -4rem auto 0
+    box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.5)
+    padding: 1.5rem
+    position: relative
+    border-radius: .5rem
+    width: 85%
+    max-width: 60rem
+    background-color: white
+    .good-looking-guy
+        width: 12.5rem
+        height: 12.5rem
+        overflow: hidden
+        border-radius: 50%
+        margin: 0 auto
+        padding: 1rem 0.5rem
+        margin-bottom: 2rem
+        background: linear-gradient(to right top, #8cc7c3, #6bb6c0, #4ea4bf)
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5)
+        &__img
+            width: 100%
+            filter: contrast(0.8)
+    &__heading
+        text-align: center
+        font-size: 2.4rem
+        font-weight: 300
+    &__text
+        &--big
+            display: block
+            font-size: 1.4rem
+    .hobbies
+        display: flex
+        justify-content: space-between
+        align-items: center
+        max-width: 35rem
+        margin: 0.5rem auto 1rem
+        &__hobby
+            display: flex
+            height: 100%
+            text-transform: uppercase
+            font-size: 0.75rem
+            padding: 1rem 0
+            text-align: center
+            flex-direction: column
+            align-items: center
+            color: #387F99
+            justify-content: space-between
+            &-icon
+                margin-bottom: 0.5rem
+                font-size: 1.6rem
+    &__btn
+        margin: 0 auto
+        margin-top: 1.5rem
+        text-decoration: none
+        font-size: 1.6rem
+        border: 1px solid #387F99
+        display: block
+        width: 9rem
+        text-align: center
+        line-height: 3.2rem
+        background: white
+        height: 3rem
+        color: #387F99
+        font-weight: 300
+        border-radius: 5px
+        transition: all .2s ease
+        &:hover, &:focus
+            color: white
+            transform: scale(1.1)
+            background: #387F99
+            
+.skills
+    margin: 2rem auto 0
+    width: 85%
+    max-width: 60rem
+    &__heading
+        margin: 2.5rem 0
+        font-weight: 300
+        font-size: 2.4rem     
+        text-align: center  
+    &__self-esteem
+        font-size: 1.4rem
+        font-weight: 600
+    &__group
+        margin: 0 auto 1rem
+        display: grid
+        max-width: 44rem
+        grid-template-columns: 1fr 1fr 1fr
+    .skill
+        display: flex
+        flex-direction: column
+        text-align: center
+        padding: 1rem 0
+        &__icon
+            font-size: 2.5rem
+            margin-bottom: 0.25rem
+        &__name
+            font-size: 0.8rem
+
+.portfolio
+    width: 85%
+    margin: 3rem auto 0
+    display: grid
+    grid-gap: 2rem
+    grid-template-columns: 1fr
+    &__heading
+        font-size: 2.4rem
+        font-weight: 300
+        text-align: center
+    .project
+        width: 100%
+        text-decoration: none
+        color: inherit
+        border-radius: 0.75rem
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5)
+        &__image
+            padding-top: 56.25%
+            position: relative
+            overflow: hidden
+            border-radius: 0.75rem
+            &:hover
+                .project__thumbnail
+                    transform: scale(1.1)
+                .project__figcaption
+                    opacity: 1
+                .project__overlay
+                    opacity: 1
+        &__thumbnail
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            position: absolute
+            width: 100%
+            height: 100%
+            transition: .25s ease-in-out
+        &__figcaption
+            display: flex
+            flex-direction: column
+            text-align: center
+            justify-content: center
+            color: #fff
+            z-index: 1
+            position: absolute
+            font-size: 0.875rem
+            top: 0
+            left: 0
+            width: 100%
+            padding: 0 1rem
+            height: 100%
+            opacity: 0
+            transition: .45s ease-in-out
+        
+        &__overlay
+            background: linear-gradient(to right top, #8cc7c3, #6bb6c0, #4ea4bf)
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            opacity: 0
+            transition: .45s ease-in-out
+
+.contact
+    margin-top: 5rem
+    padding: 2rem 2rem 7.5rem
+    min-height: 55rem
+    position: relative
+    background: linear-gradient(to right top, #8cc7c3, #6bb6c0, #4ea4bf, #3e90bc, #437ab4), url('../img/gplaypattern.png')
+    background-blend-mode: multiply
+    color: white
+    &__heading
+        text-align: center
+        font-weight: 300
+        font-size: 2.4rem
+        padding: 1rem 0
+    &__text
+        font-size: 1.2rem
+    &__wrapper
+        display: flex
+        flex-direction: column   
+    &__form
+        width: 100%
+        fieldset
+            padding: 0
+            border: 0
+        .form
+            &__field
+                margin: 1rem 0
+            &__label
+                display: block
+                font-size: 1.2rem
+                margin-bottom: .35rem
+            &__input
+                font-family: inherit
+                font-size: 1rem
+                font-weight: 300
+                display: block
+                border: none
+                width: 100%
+                padding: .5rem
+                outline: none
+                border-radius: 5px
+                transition: .3s ease-in-out
+                &:focus
+                    transform: scale(1.025)
+                    box-shadow: 3px 3px 15px -5px black
+            &__textarea
+                min-height: 9rem
+                line-height: 1.4
+            &__submit-btn
+                margin: 1.5rem 0 0 auto
+                text-decoration: none
+                font-size: 1.6rem
+                font-family: inherit
+                border: 1px solid white
+                display: block
+                width: 9rem
+                box-shadow: 5px 5px 20px -10px black
+                text-align: center
+                line-height: 3.2rem
+                background: white
+                height: 3rem
+                color: #387F99
+                font-weight: 300
+                border-radius: 5px
+                transition: all .2s ease
+                &:hover, &:focus
+                    color: white
+                    transform: scale(1.1)
+                    background: #387F99
+
+    .socials 
+        margin-top: 4.5rem
+        &__wrapper
+            display: flex
+            width: 12.5rem
+            margin: 0 auto
+            justify-content: space-around
+            align-items: center
+        &__link
+            height: 3rem
+            padding: 0.25rem
+            width: 3rem
+            text-decoration: none
+            color: white
+            font-size: 1.2rem
+            transition: 0.25s ease-in-out
+            &:hover, &:focus
+                transform: scale(1.1)
+                .socials__icon
+                    background: white
+                    border: 1px solid white
+                    color: #387F99
+        &__icon
+            width: 2.5rem
+            border-radius: 50%
+            border: 1px solid #c1eeff
+            height: 2.5rem
+            line-height: 2.5rem
+            text-align: center
+            transition: 0.25s ease-in-out
+
+.site-footer
+    position: absolute
+    padding: 1rem 0
+    bottom: 0
+    width: 100%
+    text-align: center
+    color: white
+
+            
+
+            
+
+        
