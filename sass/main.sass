@@ -11,6 +11,50 @@
 +font-face('Josefin Sans', './fonts/Josefin-Sans/JosefinSans-Regular', 400)
 +font-face('Josefin Sans', './fonts/Josefin-Sans/JosefinSans-SemiBold', 600)
     
+@keyframes shrink
+    0%
+        width: 120%
+    100%
+        width: 100%
+
+@keyframes slideDown
+    0%
+        transform: translateY(-200%)
+        opacity: 0
+    50%
+        opacity: 0
+    100%
+        opacity: 1
+        transform: translateY(0)
+
+@keyframes slideLeft 
+    0%
+        opacity: 0
+        transform: translateX(-100%)
+    50%
+        opacity: 0
+    100%
+        opacity: 1
+        transform: translateX(0)  
+
+@keyframes slideRight 
+    0%
+        opacity: 0
+        transform: translateX(100%)
+    50%
+        opacity: 0
+    100%
+        opacity: 1
+        transform: translateX(0)      
+
+@keyframes fadeIn
+    0%,
+        opacity: 0
+        transform: translateY(-20%)
+    100%
+        transform: translateY(0)
+        opacity: 1
+
 * 
     padding: 0
     margin: 0
@@ -49,14 +93,14 @@ body
 .highlight
     transition: all .2s
     position: absolute
-    top: -10rem
-    left: 0
-    height: 34px
-    width: 34px
+    top: -4rem
+    left: -1.5rem
+    height: 2rem
+    width: 2rem
     background: #4ea4bf
     z-index: -1
     display: block
-    transform: translateX(calc(-50%)) rotate(45deg) 
+    transform: translateX(-50%) rotate(45deg) 
     transform-origin: center
 
 .hover-line
@@ -73,7 +117,7 @@ body
         border-radius: 0.5rem
         background: white
         transition: width .3s ease-in-out
-    &:hover::after
+    &:hover::after, &:focus::after
         width: 100%
 
 .site-header
@@ -88,6 +132,7 @@ body
     padding: 0 1rem
     justify-content: space-between
     overflow-x: hidden
+    animation: slideDown 0.6s ease-out
     &__logo
         color: white
         font-weight: 300
@@ -100,7 +145,7 @@ body
     .site-nav
         background: #ffffff
         width: 100%
-        position: absolute
+        position: fixed
         right: 0
         top: 0
         box-shadow: 0px 0px 20px #343434
@@ -131,7 +176,6 @@ body
                 transform: scale(1.1)
         &.show
             transform: translateX(0)
-            position: fixed
             z-index: 100
     .hamburger
         height: 3rem
@@ -143,15 +187,15 @@ body
         background: transparent
         cursor: pointer
         &__line
-            height: 4px
+            height: 5px
             width: 85%
             border-radius: 3px
             background-color: #fff
             position: absolute
+            border: 1px solid rgba(0, 0, 0, 0.5)
             top: 30%
             right: 0
             transition: all .15s ease-in-out
-            
             &:nth-of-type(2)
                 width: 75%
                 top: 50%
@@ -164,12 +208,12 @@ body
             opacity: 0.7
             transform: scale(1.1)
         &.is-active
-            .hamburger__line:nth-of-type(1)
+            .hamburger__line:nth-of-type(2)
                 transform: rotate(45deg) scale(0.6)
                 top: 45%
-            .hamburger__line:nth-of-type(2)                  
+            .hamburger__line:nth-of-type(3)                  
                 opacity: 0
-            .hamburger__line:nth-of-type(3)    
+            .hamburger__line:nth-of-type(4)    
                 transform: rotate(-45deg) scale(0.6)
                 top: 45%
             .hamburger__line
@@ -177,6 +221,9 @@ body
                 width: 85%
                 background-color: #343434 
                 transform-origin: center
+        &.blackline
+            .hamburger__line
+                background-color: #333
 .hero
     padding-top: 7.5rem
     height: 30rem
@@ -186,6 +233,7 @@ body
     &__text, &__heading
         color: white
         padding-left: 1rem
+        animation: slideLeft 0.6s ease-out
     &__heading
         font-size: 2.1rem
         font-weight: 300
@@ -244,21 +292,31 @@ body
     .good-looking-guy
         width: 12.5rem
         height: 12.5rem
-        overflow: hidden
         border-radius: 50%
-        margin: 0 auto
+        margin: 0 auto 2rem
+        display: flex
+        align-items: center
+        justify-content: center
         padding: 1rem 0.5rem
-        margin-bottom: 2rem
         background: linear-gradient(to right top, #8cc7c3, #6bb6c0, #4ea4bf)
         box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5)
+        overflow: hidden
+        position: relative
+        z-index: 1
         &__img
+            margin-top: 4rem
+            display: block
             width: 100%
             filter: contrast(0.8)
+            animation: shrink 1.2s ease-out
     &__heading
         text-align: center
         font-size: 2.4rem
         font-weight: 300
     &__text
+        opacity: 0
+        &.fade-in
+            animation: fadeIn .7s ease-out forwards
         &--big
             display: block
             font-size: 1.4rem
@@ -325,6 +383,9 @@ body
         flex-direction: column
         text-align: center
         padding: 1rem 0
+        opacity: 0
+        &.fade-in
+            animation: fadeIn .7s ease-out forwards
         &__icon
             font-size: 2.5rem
             margin-bottom: 0.25rem
@@ -341,24 +402,34 @@ body
         font-size: 2.4rem
         font-weight: 300
         text-align: center
+        grid-column: 1 / -1
+    .project.show-text
+        .project__thumbnail
+            transform: scale(1.1)
+        .project__figcaption
+            opacity: 1
+        .project__overlay
+            opacity: 0.7
     .project
         width: 100%
         text-decoration: none
+        overflow: hidden
+        position: relative
         color: inherit
         border-radius: 0.75rem
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5)
+        &:hover
+            .project__thumbnail
+                transform: scale(1.1)
+            .project__figcaption
+                opacity: 1
+            .project__overlay
+                opacity: 1
+        &:focus
+            transform: scale(0.95)
         &__image
             padding-top: 56.25%
-            position: relative
-            overflow: hidden
             border-radius: 0.75rem
-            &:hover
-                .project__thumbnail
-                    transform: scale(1.1)
-                .project__figcaption
-                    opacity: 1
-                .project__overlay
-                    opacity: 1
         &__thumbnail
             top: 0
             left: 0
@@ -396,10 +467,10 @@ body
             transition: .45s ease-in-out
 
 .contact
-    margin-top: 5rem
-    padding: 2rem 2rem 7.5rem
+    margin-top: -3rem
+    padding: 5rem 2rem 7.5rem
     min-height: 55rem
-    position: relative
+    overflow-x: hidden
     background: linear-gradient(to right top, #8cc7c3, #6bb6c0, #4ea4bf, #3e90bc, #437ab4), url('../img/gplaypattern.png')
     background-blend-mode: multiply
     color: white
@@ -409,12 +480,18 @@ body
         font-size: 2.4rem
         padding: 1rem 0
     &__text
+        transform: translateX(-120%)
         font-size: 1.2rem
+        &.slide-left
+            animation: slideLeft .7s ease-out forwards
     &__wrapper
         display: flex
         flex-direction: column   
     &__form
         width: 100%
+        transform: translateX(150%)
+        &.slide-right
+            animation: slideRight .7s ease-out forwards
         fieldset
             padding: 0
             border: 0
@@ -435,13 +512,14 @@ body
                 padding: .5rem
                 outline: none
                 border-radius: 5px
-                transition: .3s ease-in-out
+                transition: transform .3s ease-in-out, box-shadow .3s ease-in-out
                 &:focus
                     transform: scale(1.025)
                     box-shadow: 3px 3px 15px -5px black
             &__textarea
                 min-height: 9rem
                 line-height: 1.4
+                resize: vertical
             &__submit-btn
                 margin: 1.5rem 0 0 auto
                 text-decoration: none
