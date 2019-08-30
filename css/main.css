@@ -22,6 +22,146 @@
   font-style: normal;
 }
 
+@-webkit-keyframes shrink {
+  0% {
+    width: 120%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes shrink {
+  0% {
+    width: 120%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes slideDown {
+  0% {
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes slideLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slideRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -71,15 +211,15 @@ body {
   -webkit-transition: all .2s;
   transition: all .2s;
   position: absolute;
-  top: -10rem;
-  left: 0;
-  height: 34px;
-  width: 34px;
+  top: -4rem;
+  left: -1.5rem;
+  height: 2rem;
+  width: 2rem;
   background: #4ea4bf;
   z-index: -1;
   display: block;
-  -webkit-transform: translateX(calc(-50%)) rotate(45deg);
-          transform: translateX(calc(-50%)) rotate(45deg);
+  -webkit-transform: translateX(-50%) rotate(45deg);
+          transform: translateX(-50%) rotate(45deg);
   -webkit-transform-origin: center;
           transform-origin: center;
 }
@@ -103,7 +243,7 @@ body {
   transition: width .3s ease-in-out;
 }
 
-.hover-line:hover::after {
+.hover-line:hover::after, .hover-line:focus::after {
   width: 100%;
 }
 
@@ -125,6 +265,8 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   overflow-x: hidden;
+  -webkit-animation: slideDown 0.6s ease-out;
+          animation: slideDown 0.6s ease-out;
 }
 
 .site-header__logo {
@@ -143,7 +285,7 @@ body {
 .site-header .site-nav {
   background: #ffffff;
   width: 100%;
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
   -webkit-box-shadow: 0px 0px 20px #343434;
@@ -213,7 +355,6 @@ body {
 .site-header .site-nav.show {
   -webkit-transform: translateX(0);
           transform: translateX(0);
-  position: fixed;
   z-index: 100;
 }
 
@@ -229,11 +370,12 @@ body {
 }
 
 .site-header .hamburger__line {
-  height: 4px;
+  height: 5px;
   width: 85%;
   border-radius: 3px;
   background-color: #fff;
   position: absolute;
+  border: 1px solid rgba(0, 0, 0, 0.5);
   top: 30%;
   right: 0;
   -webkit-transition: all .15s ease-in-out;
@@ -260,17 +402,17 @@ body {
           transform: scale(1.1);
 }
 
-.site-header .hamburger.is-active .hamburger__line:nth-of-type(1) {
+.site-header .hamburger.is-active .hamburger__line:nth-of-type(2) {
   -webkit-transform: rotate(45deg) scale(0.6);
           transform: rotate(45deg) scale(0.6);
   top: 45%;
 }
 
-.site-header .hamburger.is-active .hamburger__line:nth-of-type(2) {
+.site-header .hamburger.is-active .hamburger__line:nth-of-type(3) {
   opacity: 0;
 }
 
-.site-header .hamburger.is-active .hamburger__line:nth-of-type(3) {
+.site-header .hamburger.is-active .hamburger__line:nth-of-type(4) {
   -webkit-transform: rotate(-45deg) scale(0.6);
           transform: rotate(-45deg) scale(0.6);
   top: 45%;
@@ -282,6 +424,10 @@ body {
   background-color: #343434;
   -webkit-transform-origin: center;
           transform-origin: center;
+}
+
+.site-header .hamburger.blackline .hamburger__line {
+  background-color: #333;
 }
 
 .hero {
@@ -296,6 +442,8 @@ body {
 .hero__text, .hero__heading {
   color: white;
   padding-left: 1rem;
+  -webkit-animation: slideLeft 0.6s ease-out;
+          animation: slideLeft 0.6s ease-out;
 }
 
 .hero__heading {
@@ -397,27 +545,50 @@ body {
 .about-me .good-looking-guy {
   width: 12.5rem;
   height: 12.5rem;
-  overflow: hidden;
   border-radius: 50%;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 1rem 0.5rem;
-  margin-bottom: 2rem;
   background: -webkit-gradient(linear, left bottom, right top, from(#8cc7c3), color-stop(#6bb6c0), to(#4ea4bf));
   background: linear-gradient(to right top, #8cc7c3, #6bb6c0, #4ea4bf);
   -webkit-box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
           box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .about-me .good-looking-guy__img {
+  margin-top: 4rem;
+  display: block;
   width: 100%;
   -webkit-filter: contrast(0.8);
           filter: contrast(0.8);
+  -webkit-animation: shrink 1.2s ease-out;
+          animation: shrink 1.2s ease-out;
 }
 
 .about-me__heading {
   text-align: center;
   font-size: 2.4rem;
   font-weight: 300;
+}
+
+.about-me__text {
+  opacity: 0;
+}
+
+.about-me__text.fade-in {
+  -webkit-animation: fadeIn .7s ease-out forwards;
+          animation: fadeIn .7s ease-out forwards;
 }
 
 .about-me__text--big {
@@ -529,6 +700,12 @@ body {
           flex-direction: column;
   text-align: center;
   padding: 1rem 0;
+  opacity: 0;
+}
+
+.skills .skill.fade-in {
+  -webkit-animation: fadeIn .7s ease-out forwards;
+          animation: fadeIn .7s ease-out forwards;
 }
 
 .skills .skill__icon {
@@ -554,35 +731,54 @@ body {
   font-size: 2.4rem;
   font-weight: 300;
   text-align: center;
+  grid-column: 1 / -1;
+}
+
+.portfolio .project.show-text .project__thumbnail {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.portfolio .project.show-text .project__figcaption {
+  opacity: 1;
+}
+
+.portfolio .project.show-text .project__overlay {
+  opacity: 0.7;
 }
 
 .portfolio .project {
   width: 100%;
   text-decoration: none;
+  overflow: hidden;
+  position: relative;
   color: inherit;
   border-radius: 0.75rem;
   -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 }
 
-.portfolio .project__image {
-  padding-top: 56.25%;
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.75rem;
-}
-
-.portfolio .project__image:hover .project__thumbnail {
+.portfolio .project:hover .project__thumbnail {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-.portfolio .project__image:hover .project__figcaption {
+.portfolio .project:hover .project__figcaption {
   opacity: 1;
 }
 
-.portfolio .project__image:hover .project__overlay {
+.portfolio .project:hover .project__overlay {
   opacity: 1;
+}
+
+.portfolio .project:focus {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.portfolio .project__image {
+  padding-top: 56.25%;
+  border-radius: 0.75rem;
 }
 
 .portfolio .project__thumbnail {
@@ -637,10 +833,10 @@ body {
 }
 
 .contact {
-  margin-top: 5rem;
-  padding: 2rem 2rem 7.5rem;
+  margin-top: -3rem;
+  padding: 5rem 2rem 7.5rem;
   min-height: 55rem;
-  position: relative;
+  overflow-x: hidden;
   background: -webkit-gradient(linear, left bottom, right top, from(#8cc7c3), color-stop(#6bb6c0), color-stop(#4ea4bf), color-stop(#3e90bc), to(#437ab4)), url("../img/gplaypattern.png");
   background: linear-gradient(to right top, #8cc7c3, #6bb6c0, #4ea4bf, #3e90bc, #437ab4), url("../img/gplaypattern.png");
   background-blend-mode: multiply;
@@ -655,7 +851,14 @@ body {
 }
 
 .contact__text {
+  -webkit-transform: translateX(-120%);
+          transform: translateX(-120%);
   font-size: 1.2rem;
+}
+
+.contact__text.slide-left {
+  -webkit-animation: slideLeft .7s ease-out forwards;
+          animation: slideLeft .7s ease-out forwards;
 }
 
 .contact__wrapper {
@@ -670,6 +873,13 @@ body {
 
 .contact__form {
   width: 100%;
+  -webkit-transform: translateX(150%);
+          transform: translateX(150%);
+}
+
+.contact__form.slide-right {
+  -webkit-animation: slideRight .7s ease-out forwards;
+          animation: slideRight .7s ease-out forwards;
 }
 
 .contact__form fieldset {
@@ -697,8 +907,10 @@ body {
   padding: .5rem;
   outline: none;
   border-radius: 5px;
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+  -webkit-transition: -webkit-transform .3s ease-in-out, -webkit-box-shadow .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out, -webkit-box-shadow .3s ease-in-out;
+  transition: transform .3s ease-in-out, box-shadow .3s ease-in-out;
+  transition: transform .3s ease-in-out, box-shadow .3s ease-in-out, -webkit-transform .3s ease-in-out, -webkit-box-shadow .3s ease-in-out;
 }
 
 .contact__form .form__input:focus {
@@ -711,6 +923,7 @@ body {
 .contact__form .form__textarea {
   min-height: 9rem;
   line-height: 1.4;
+  resize: vertical;
 }
 
 .contact__form .form__submit-btn {
