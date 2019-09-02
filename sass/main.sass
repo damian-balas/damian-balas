@@ -38,9 +38,9 @@ $break-small: 37.5em
 
 @keyframes slideUp
     0%
-        transform: translateY(3rem)
-    100%
         transform: translateY(0)
+    100%
+        transform: translateY(-4rem)
 
 @keyframes slideLeft 
     0%
@@ -48,7 +48,16 @@ $break-small: 37.5em
         transform: translateX(-3rem)
     100%
         opacity: 1
-        transform: translateX(0)  
+        transform: translateX(0) 
+
+@keyframes heroIconSlideLeft
+    0%
+        opacity: 0
+        transform: translate(10%, -50%)
+    100%
+        opacity: 0.1
+        transform: translate(-10%, -50%)  
+    
 
 @keyframes slideRight 
     0%
@@ -61,9 +70,11 @@ $break-small: 37.5em
 @keyframes fadeIn
     0%,
         opacity: 0
+        clip-path: circle(0%)
         transform: translateY(-3rem)
     100%
         transform: translateY(0)
+        clip-path: circle(100%)
         opacity: 1
 
 * 
@@ -113,12 +124,6 @@ body
     display: block
     transform: translateX(-50%) rotate(45deg) 
     transform-origin: center
-
-.top30
-    position: absolute
-    top: 40%
-    transform: translateY(-50%)
-
 
 .hover-line
     display: inline-block
@@ -256,10 +261,20 @@ body
     min-height: 80vh
     position: relative
     display: flex
+    overflow-x: hidden
     flex-direction: column
     justify-content: space-around
     background: linear-gradient(to right top, #8cc7c3, #6bb6c0, #4ea4bf, #3e90bc, #437ab4), url('../img/gplaypattern.png')
     background-blend-mode: multiply
+    &__bg-icon
+        position: absolute
+        top: 50%
+        right: 0      
+        opacity: 0.1
+        color: white
+        font-size: calc(20vh + 20vw)
+        transform: translate(0, -50%)
+        animation: heroIconSlideLeft 1s cubic-bezier(0.24, 0.45, 0.44, 0.93) forwards
     &__text, &__heading
         color: white
         padding-left: 1rem
@@ -270,6 +285,7 @@ body
     &__text
         color: #afd3da
         font-size: 1.2rem
+
     .scroll-down
         position: absolute
         top: 0
@@ -317,6 +333,12 @@ body
                 100%
                     opacity: 0
 
+@media (min-width: 24em)
+    .hero__heading
+        font-size: 2.6rem
+    .hero__text
+        font-size: 1.6rem
+
 @media (min-width: $break-small)
     .hero
         &__text, &__heading
@@ -324,12 +346,12 @@ body
             padding: 0
             margin: 0 auto
         &__heading
-            font-size: 2.6rem
+            font-size: 2.8rem
         &__text
-            font-size: 1.6rem
+            font-size: 1.8rem
 
 .about-me
-    margin: -4rem auto 0
+    margin: 0 auto
     box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.5)
     padding: 1.5rem
     position: relative
@@ -337,7 +359,7 @@ body
     width: 85%
     max-width: 40rem
     background-color: white
-    animation: slideUp 1.2s cubic-bezier(0.24, 0.45, 0.44, 0.93) 200ms
+    animation: slideUp 1.2s cubic-bezier(0.24, 0.45, 0.44, 0.93) forwards
     .good-looking-guy
         width: 12.5rem
         height: 12.5rem
@@ -355,9 +377,9 @@ body
         &__img
             margin-top: 4rem
             display: block
-            width: 100%
+            width: 120%
             filter: contrast(0.8)
-            animation: shrink 1s cubic-bezier(0.24, 0.45, 0.44, 0.93)
+            animation: shrink 1s cubic-bezier(0.24, 0.45, 0.44, 0.93) 200ms forwards
     &__heading
         text-align: center
         font-size: 2.4rem
@@ -366,7 +388,7 @@ body
         opacity: 0
         margin: 0 auto
         &.fade-in
-            animation: fadeIn .7s cubic-bezier(0.24, 0.45, 0.44, 0.93) forwards
+            animation: fadeIn 1s cubic-bezier(0.24, 0.45, 0.44, 0.93) forwards
         &--big
             display: block
             font-size: 1.4rem
