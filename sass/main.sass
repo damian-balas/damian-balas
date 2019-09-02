@@ -1,8 +1,11 @@
+$break-small: 37.5em
+
+
 // Mixins
 =font-face($family, $path, $weight: normal, $style: normal)
   @font-face
     font-family: $family
-    font-display: auto
+    font-display: swap
     src: local($family), url('#{$path}.ttf') format('truetype')
     font-weight: $weight
     font-style: $style 
@@ -19,20 +22,30 @@
 
 @keyframes slideDown
     0%
-        transform: translateY(-200%)
         opacity: 0
-    50%
-        opacity: 0
+        transform: translateY(-3rem)
     100%
         opacity: 1
+        transform: translateY(0)
+
+@keyframes slideUpScroll
+    0%
+        opacity: 0
+        transform: translate(-50%, 3rem)
+    100%
+        opacity: 1
+        transform: translate(-50%, 0)
+
+@keyframes slideUp
+    0%
+        transform: translateY(3rem)
+    100%
         transform: translateY(0)
 
 @keyframes slideLeft 
     0%
         opacity: 0
-        transform: translateX(-100%)
-    50%
-        opacity: 0
+        transform: translateX(-3rem)
     100%
         opacity: 1
         transform: translateX(0)  
@@ -40,9 +53,7 @@
 @keyframes slideRight 
     0%
         opacity: 0
-        transform: translateX(100%)
-    50%
-        opacity: 0
+        transform: translateX(3rem)
     100%
         opacity: 1
         transform: translateX(0)      
@@ -50,7 +61,7 @@
 @keyframes fadeIn
     0%,
         opacity: 0
-        transform: translateY(-20%)
+        transform: translateY(-3rem)
     100%
         transform: translateY(0)
         opacity: 1
@@ -103,6 +114,12 @@ body
     transform: translateX(-50%) rotate(45deg) 
     transform-origin: center
 
+.top30
+    position: absolute
+    top: 40%
+    transform: translateY(-50%)
+
+
 .hover-line
     display: inline-block
     color: white
@@ -132,7 +149,7 @@ body
     padding: 0 1rem
     justify-content: space-between
     overflow-x: hidden
-    animation: slideDown 0.6s ease-out
+    animation: slideDown 1s cubic-bezier(0.24, 0.45, 0.44, 0.93)
     &__logo
         color: white
         font-weight: 300
@@ -146,11 +163,10 @@ body
         background: #ffffff
         width: 100%
         position: fixed
-        right: 0
+        right: -120%
         top: 0
         box-shadow: 0px 0px 20px #343434
-        transform: translateX(120%)
-        transition: transform .3s ease
+        transition: all .3s cubic-bezier(0.24, 0.45, 0.44, 0.93)
         &__ul
             list-style: none
             width: 80%
@@ -175,7 +191,7 @@ body
             &:focus, &:hover
                 transform: scale(1.1)
         &.show
-            transform: translateX(0)
+            right: 0
             z-index: 100
     .hamburger
         height: 3rem
@@ -195,7 +211,7 @@ body
             border: 1px solid rgba(0, 0, 0, 0.5)
             top: 30%
             right: 0
-            transition: all .15s ease-in-out
+            transition: all .15s ease-in-out, background .35s ease-out
             &:nth-of-type(2)
                 width: 75%
                 top: 50%
@@ -224,24 +240,39 @@ body
         &.blackline
             .hamburger__line
                 background-color: #333
+
+@media (min-width: $break-small)
+    .site-header
+        padding-left: 2rem
+        &__logo
+            font-size: 1.4rem
+            .bold
+                letter-spacing: 5.2px
+        .hamburger
+            right: 2rem
+
 .hero
-    padding-top: 7.5rem
-    height: 30rem
+    padding-top: 6.5rem
+    min-height: 80vh
     position: relative
+    display: flex
+    flex-direction: column
+    justify-content: space-around
     background: linear-gradient(to right top, #8cc7c3, #6bb6c0, #4ea4bf, #3e90bc, #437ab4), url('../img/gplaypattern.png')
     background-blend-mode: multiply
     &__text, &__heading
         color: white
         padding-left: 1rem
-        animation: slideLeft 0.6s ease-out
+        animation: slideLeft 1s cubic-bezier(0.24, 0.45, 0.44, 0.93)
     &__heading
         font-size: 2.1rem
         font-weight: 300
     &__text
+        color: #afd3da
         font-size: 1.2rem
     .scroll-down
         position: absolute
-        bottom: 6.5rem
+        top: 0
         left: 50%
         font-weight: 300
         transform: translateX(-50%)
@@ -249,8 +280,14 @@ body
         color: white
         transition: opacity .3s
         padding-top: 4.5rem
+        animation: slideUpScroll 1s cubic-bezier(0.24, 0.45, 0.44, 0.93)
         &:hover
             opacity: .5
+        &__wrapper
+            margin-top: 2.5rem
+            height: 12.5rem
+            padding-bottom: 4rem
+            position: relative
         &__line
             position: absolute
             top: 0
@@ -280,15 +317,27 @@ body
                 100%
                     opacity: 0
 
+@media (min-width: $break-small)
+    .hero
+        &__text, &__heading
+            width: 85%
+            padding: 0
+            margin: 0 auto
+        &__heading
+            font-size: 2.6rem
+        &__text
+            font-size: 1.6rem
+
 .about-me
     margin: -4rem auto 0
     box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.5)
     padding: 1.5rem
     position: relative
-    border-radius: .5rem
+    border-radius: .25rem
     width: 85%
-    max-width: 60rem
+    max-width: 40rem
     background-color: white
+    animation: slideUp 1.2s cubic-bezier(0.24, 0.45, 0.44, 0.93) 200ms
     .good-looking-guy
         width: 12.5rem
         height: 12.5rem
@@ -308,15 +357,16 @@ body
             display: block
             width: 100%
             filter: contrast(0.8)
-            animation: shrink 1.2s ease-out
+            animation: shrink 1s cubic-bezier(0.24, 0.45, 0.44, 0.93)
     &__heading
         text-align: center
         font-size: 2.4rem
         font-weight: 300
     &__text
         opacity: 0
+        margin: 0 auto
         &.fade-in
-            animation: fadeIn .7s ease-out forwards
+            animation: fadeIn .7s cubic-bezier(0.24, 0.45, 0.44, 0.93) forwards
         &--big
             display: block
             font-size: 1.4rem
@@ -324,7 +374,7 @@ body
         display: flex
         justify-content: space-between
         align-items: center
-        max-width: 35rem
+        max-width: 25rem
         margin: 0.5rem auto 1rem
         &__hobby
             display: flex
@@ -360,11 +410,23 @@ body
             color: white
             transform: scale(1.1)
             background: #387F99
-            
+
+@media (min-width: $break-small)
+    .about-me
+        padding: 2.5rem
+        .good-looking-guy
+            width: 15rem
+            height: 15rem
+        &__heading
+            font-size: 2.6rem
+        &__text
+            font-size: 1.2rem
+            &--big
+                font-size: 1.6rem
 .skills
     margin: 2rem auto 0
     width: 85%
-    max-width: 60rem
+    max-width: 35rem
     &__heading
         margin: 2.5rem 0
         font-weight: 300
@@ -385,12 +447,19 @@ body
         padding: 1rem 0
         opacity: 0
         &.fade-in
-            animation: fadeIn .7s ease-out forwards
+            animation: fadeIn .7s cubic-bezier(0.24, 0.45, 0.44, 0.93) forwards
         &__icon
             font-size: 2.5rem
             margin-bottom: 0.25rem
         &__name
             font-size: 0.8rem
+
+@media (min-width: $break-small)
+    .skills
+        &__heading
+            font-size: 2.6rem
+        &__self-esteem
+            font-size: 1.5rem
 
 .portfolio
     width: 85%
@@ -416,7 +485,7 @@ body
         overflow: hidden
         position: relative
         color: inherit
-        border-radius: 0.75rem
+        border-radius: 0.25rem
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5)
         &:hover
             .project__thumbnail
@@ -429,7 +498,7 @@ body
             transform: scale(0.95)
         &__image
             padding-top: 56.25%
-            border-radius: 0.75rem
+            border-radius: 0.25rem
         &__thumbnail
             top: 0
             left: 0
@@ -466,6 +535,12 @@ body
             opacity: 0
             transition: .45s ease-in-out
 
+@media (min-width: $break-small)
+    .portfolio
+        grid-template-columns: 1fr 1fr
+        &__heading
+            font-size: 2.6rem
+        
 .contact
     margin-top: -3rem
     padding: 5rem 2rem 7.5rem
@@ -483,7 +558,7 @@ body
         transform: translateX(-120%)
         font-size: 1.2rem
         &.slide-left
-            animation: slideLeft .7s ease-out forwards
+            animation: slideLeft 1s cubic-bezier(0.24, 0.45, 0.44, 0.93) forwards
     &__wrapper
         display: flex
         flex-direction: column   
@@ -491,7 +566,7 @@ body
         width: 100%
         transform: translateX(150%)
         &.slide-right
-            animation: slideRight .7s ease-out forwards
+            animation: slideRight 1s cubic-bezier(0.24, 0.45, 0.44, 0.93) forwards
         fieldset
             padding: 0
             border: 0
@@ -536,6 +611,7 @@ body
                 color: #387F99
                 font-weight: 300
                 border-radius: 5px
+                cursor: pointer
                 transition: all .2s ease
                 &:hover, &:focus
                     color: white
@@ -572,6 +648,13 @@ body
             line-height: 2.5rem
             text-align: center
             transition: 0.25s ease-in-out
+
+@media (min-width: $break-small)
+    .contact
+        padding: 5rem 5rem 7.5rem
+        &__heading
+            font-size: 2.6rem
+        
 
 .site-footer
     position: absolute
