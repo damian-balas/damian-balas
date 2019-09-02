@@ -11,12 +11,12 @@
     />
     <meta name="author" content="Damian Balas" />
     <meta name="theme-color" content="#ffffff" />
-    <link rel="stylesheet" href="./css/main.css" />
-    <link rel="shortcut icon" href="favicon.png" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+      href="/dist/css/style.css"
     />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="shortcut icon" href="favicon.png" />
     <title>Damian Balas</title>
   </head>
   <body>
@@ -51,6 +51,7 @@
     </header>
     <main>
       <section class="hero">
+        <span aria-hidden="true" class="hero__bg-icon icon icon-code"></span>
         <div class="hero__text-wrapper">
           <h2 class="hero__heading">Damian Balas<br />Front-End Developer</h2>
           <p class="hero__text">
@@ -81,21 +82,21 @@
           <div class="hobbies__hobby">
             <span
               aria-hidden="true"
-              class="hobbies__hobby-icon fas fa-walking"
+              class="hobbies__hobby-icon icon icon-walking"
             ></span>
             Walking
           </div>
           <div class="hobbies__hobby">
             <span
               aria-hidden="true"
-              class="hobbies__hobby-icon far fa-keyboard"
+              class="hobbies__hobby-icon icon icon-code"
             ></span>
             Web Developing
           </div>
           <div class="hobbies__hobby">
             <span
               aria-hidden="true"
-              class="hobbies__hobby-icon fab fa-spotify"
+              class="hobbies__hobby-icon icon icon-spotify"
             ></span>
             Music
           </div>
@@ -117,21 +118,21 @@
         <h3 class="skills__self-esteem">Well</h3>
         <div class="skills__group">
           <div class="skill" title="HyperText Markup Language">
-            <span aria-hidden="true" class="skill__icon fab fa-html5"></span>
+            <span aria-hidden="true" class="skill__icon icon icon-html5"></span>
             <span class="skill__name">HTML</span>
           </div>
           <div class="skill" title="Cascading Style Sheets">
-            <span aria-hidden="true" class="skill__icon fab fa-css3"></span>
+            <span aria-hidden="true" class="skill__icon icon icon-css3-alt"></span>
             <span class="skill__name">CSS</span>
           </div>
           <div class="skill" title="Syntactically Awesome Style Sheets">
-            <span aria-hidden="true" class="skill__icon fab fa-sass"></span>
+            <span aria-hidden="true" class="skill__icon icon icon-sass"></span>
             <span class="skill__name">SASS</span>
           </div>
           <div class="skill" title="Responsive Web Design">
             <span
               aria-hidden="true"
-              class="skill__icon fas fa-mobile-alt"
+              class="skill__icon icon icon-mobile"
             ></span>
             <span class="skill__name">RWD</span>
           </div>
@@ -140,17 +141,17 @@
         <h3 class="skills__self-esteem">Good</h3>
         <div class="skills__group">
           <div class="skill">
-            <span aria-hidden="true" class="skill__icon fab fa-git-alt"></span>
+            <span aria-hidden="true" class="skill__icon icon icon-git"></span>
             <span class="skill__name">Git</span>
           </div>
           <div class="skill" title="JavaScript ECMAScript 2015/6">
-            <span aria-hidden="true" class="skill__icon fab fa-js"></span>
+            <span aria-hidden="true" class="skill__icon icon icon-js-square"></span>
             <span class="skill__name">JS (ES6+)</span>
           </div>
           <div class="skill">
             <span
               aria-hidden="true"
-              class="skill__icon fab fa-accessible-icon"
+              class="skill__icon icon icon-accessible-icon"
             ></span>
             <span class="skill__name">Accessibility</span>
           </div>
@@ -159,8 +160,12 @@
         <h3 class="skills__self-esteem">Learning</h3>
         <div class="skills__group">
           <div class="skill">
-            <span aria-hidden="true" class="skill__icon fab fa-react"></span>
-            <span class="skill__name">React and Redux</span>
+            <span aria-hidden="true" class="skill__icon icon icon-react"></span>
+            <span class="skill__name">React</span>
+          </div>
+          <div class="skill">
+            <span aria-hidden="true" class="skill__icon icon icon-redux"></span>
+            <span class="skill__name">Redux</span>
           </div>
         </div>
       </section>
@@ -313,7 +318,7 @@
                 rel="noopener"
               >
                 <span class="sr-only">Go to my Facebook profile</span>
-                <span class="socials__icon fab fa-facebook-f"></span>
+                <span class="socials__icon icon icon-facebook-f"></span>
               </a>
               <a
                 class="socials__link"
@@ -323,7 +328,7 @@
                 rel="noopener"
               >
                 <span class="sr-only">Go to my GitHub profile</span>
-                <span class="socials__icon fab fa-github"></span>
+                <span class="socials__icon icon icon-github"></span>
               </a>
               <a
                 class="socials__link"
@@ -333,7 +338,7 @@
                 rel="noopener"
               >
                 <span class="sr-only">Go to my LinkedIn profile</span>
-                <span class="socials__icon fab fa-linkedin-in"></span>
+                <span class="socials__icon icon icon-linkedin-in"></span>
               </a>
             </div>
           </div>
@@ -358,6 +363,6 @@
         </div>
       </footer>
     </main>
-    <script src="./js/main.js"></script>
+    <script defer src="./js/main.js"></script>
   </body>
 </html>
