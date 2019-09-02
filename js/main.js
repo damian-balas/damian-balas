@@ -37,19 +37,15 @@ function changeHamburgerLineColor () {
 
   if (aboutMeDistanceToTopMinusHamburger <= 0 && scrollY < aboutMeOffsetTop + aboutMeHeight && !hasClass) {
     hamburgerBtn.classList.add('blackline')
-    console.log('add1')
   }
   if (aboutMeDistanceToTopMinusHamburger > 0 && hasClass) {
     hamburgerBtn.classList.remove('blackline')
-    console.log('remove1')
   }
   if (contactDistanceToTopMinusHamburger <= 0 && scrollY > contactOffsetTop - HAMBURGER_BOTTOM && hasClass) {
     hamburgerBtn.classList.remove('blackline')
-    console.log('remove2')
   }
   if (contactDistanceToTopMinusHamburger > 0 && scrollY > aboutMeOffsetTop + aboutMeHeight && !hasClass) {
     hamburgerBtn.classList.add('blackline')
-    console.log('add2')
   }
 }
 
@@ -60,13 +56,13 @@ function mobilePortfolio () {
     if (portfolioDistanceToTop + windowHeight * 0.4 < windowHeight) {
       projects.forEach((project, index) => setTimeout(() => {
         project.classList.add('show-text')
-      }, 300 * (index + 1)))
+      }, 300 * index))
     }
   }
   if (window.innerWidth > 786 || portfolioDistanceToTop + windowHeight * 0.4 > windowHeight) {
     projects.forEach((project, index) => setTimeout(() => {
       project.classList.remove('show-text')
-    }, 300 * (index + 1)))
+    }, 300 * index))
   }
 }
 

@@ -51,17 +51,21 @@
     </header>
     <main>
       <section class="hero">
-        <h2 class="hero__heading">Damian Balas<br />Front-End Developer</h2>
-        <p class="hero__text semi-transparent">
-          Scroll down and get to know me
-        </p>
-        <a class="scroll-down" href="#about-me"
-          ><span class="scroll-down__line"></span>
-          <span class="scroll-down__line"></span>
-          <span class="scroll-down__line"></span>Scroll<span class="sr-only">
-            down to about me section</span
-          ></a
-        >
+        <div class="hero__text-wrapper">
+          <h2 class="hero__heading">Damian Balas<br />Front-End Developer</h2>
+          <p class="hero__text">
+            Scroll down and get to know me
+          </p>
+        </div>
+        <div class="scroll-down__wrapper">
+          <a class="scroll-down" href="#about-me"
+            ><span class="scroll-down__line"></span>
+            <span class="scroll-down__line"></span>
+            <span class="scroll-down__line"></span>Scroll<span class="sr-only">
+              down to about me section</span
+            ></a
+          >
+        </div>
       </section>
       <section id="about-me" class="about-me">
         <div class="good-looking-guy">
@@ -97,14 +101,14 @@
           </div>
         </div>
         <p class="about-me__text">
-          <span class="about-me__text--big">Hello there!</span>
-          I am a young and ambitious Front-End Developer from Poland. My
-          adventure with programming started when I was 16 years old. I saw
+          <span class="about-me__text--big">Hello,</span>
+          my name is Damian Balas. I am a Front-End Developer living in Poland.
+          My adventure with programming started when I was 16 years old. I saw
           Travis Neilson on YouTube (Dev Tips). I was really suprised what few
           lines of code can do. I started learning web development. However it
           wasn't my life goal. Everything changed when I had to do a website for
           a school project. I enjoyed it so much, that I decided to be a
-          front-end developer and here I am 😃
+          front-end developer.
         </p>
         <a class="about-me__btn" href="#">Hire Me!</a>
       </section>
@@ -161,7 +165,7 @@
         </div>
       </section>
       <section id="portfolio" class="portfolio">
-        <h2 class="portfolio__heading">Things I've worked on</h2>
+        <h2 class="portfolio__heading">Portfolio</h2>
         <a
           href="https://damian-balas.github.io/tanatos-studio/"
           rel="noopener"
@@ -196,7 +200,10 @@
               alt="Screenshot of a website called Grod Art"
             />
             <figcaption class="project__figcaption">
-              <h3 class="project__title">Website</h3>
+              <h3 class="project__title">
+                Coded and designed for Tomasz Grodecki, who needed a website to
+                start selling hand-made wooden decorations.
+              </h3>
             </figcaption>
           </figure>
           <div class="project__overlay"></div>
@@ -245,14 +252,13 @@
         </a>
       </section>
       <section id="contact" class="contact">
-        <h2 class="contact__heading">Contact</h2>
+        <h2 class="contact__heading">Get in touch</h2>
         <p class="contact__text">
-          Have a question?<br />
-          Feel free to contact me at any time.<br />
-          Use the form below or mail me directly at
+          If you require any further information,<br />feel free to mail me at
           <a class="hover-line" href="mailto:damian.webdev@gmail.com"
             >damian.webdev@gmail.com</a
-          >
+          ><br />
+          or use the form below.
         </p>
         <div class="contact__wrapper">
           <div class="contact__form">
@@ -278,7 +284,7 @@
                     type="text"
                     class="form__input"
                     required
-                    placeholder="Job offer - Front-End developer Gliwice"
+                    placeholder="Job offer - Front-End developer"
                     name="subject"
                   />
                 </div>
