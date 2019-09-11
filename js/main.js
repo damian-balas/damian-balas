@@ -71,11 +71,24 @@ function animateItems () {
   const aboutMeTextDistanceToTop = aboutMeText.getBoundingClientRect().top
   const skillsSectionDistanceToTop = skillsSection.getBoundingClientRect().top
   const contactTextDistanceToTop = contactText.getBoundingClientRect().top
-
+  const portfolioDistanceToTop = portfolio.getBoundingClientRect().top
   // if aboutMeText is x% in viewport
   const aboutMeTextVisible = aboutMeTextDistanceToTop + windowHeight * 0.3 < windowHeight
   const skillsSectionVisible = skillsSectionDistanceToTop + windowHeight * 0.5 < windowHeight
   const contactTextVisible = contactTextDistanceToTop + windowHeight * 0.4 < windowHeight
+  const portfolioVisible = portfolioDistanceToTop < windowHeight
+
+  if (portfolioVisible && window.innerWidth > 1000) {
+    const offset = (Math.min(0, -windowHeight * 0.3 - portfolioDistanceToTop + 500)) * 0.1
+    projects[0].style.transform = `translate(${offset * 3}%,${offset * 1.5}%)`
+    projects[1].style.transform = `translate(${-offset * 3}%,${offset * 1.5}%)`
+    projects[2].style.transform = `translate(${offset * 3}%,${offset}%)`
+    projects[3].style.transform = `translate(${0}%,${-offset}%)`
+    projects[4].style.transform = `translate(${-offset * 3}%,${offset}%)`
+  } 
+  if (window.innerWidth <= 1000){
+    projects.forEach(project => project.style.transform = 'translate(0,0)')
+  }
 
   // if visible add class
   if (aboutMeTextVisible && !aboutMeText.classList.contains('fade-in')) {
@@ -97,6 +110,8 @@ function callScrollFunctions () {
   changeHamburgerLineColor()
   animateItems()
 }
+
+callScrollFunctions()
 
 window.addEventListener('scroll', throttle(callScrollFunctions, 50))
 

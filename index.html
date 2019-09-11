@@ -11,10 +11,7 @@
     />
     <meta name="author" content="Damian Balas" />
     <meta name="theme-color" content="#ffffff" />
-    <link
-      rel="stylesheet"
-      href="/dist/css/style.css"
-    />
+    <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="shortcut icon" href="favicon.png" />
     <title>Damian Balas</title>
@@ -111,7 +108,7 @@
           a school project. I enjoyed it so much, that I decided to be a
           front-end developer.
         </p>
-        <a class="about-me__btn" href="#">Hire Me!</a>
+        <a class="about-me__btn" href="#contact">Hire Me!</a>
       </section>
       <section id="skills" class="skills">
         <h2 class="skills__heading">What do I know?</h2>
@@ -122,7 +119,10 @@
             <span class="skill__name">HTML</span>
           </div>
           <div class="skill" title="Cascading Style Sheets">
-            <span aria-hidden="true" class="skill__icon icon icon-css3-alt"></span>
+            <span
+              aria-hidden="true"
+              class="skill__icon icon icon-css3-alt"
+            ></span>
             <span class="skill__name">CSS</span>
           </div>
           <div class="skill" title="Syntactically Awesome Style Sheets">
@@ -145,7 +145,10 @@
             <span class="skill__name">Git</span>
           </div>
           <div class="skill" title="JavaScript ECMAScript 2015/6">
-            <span aria-hidden="true" class="skill__icon icon icon-js-square"></span>
+            <span
+              aria-hidden="true"
+              class="skill__icon icon icon-js-square"
+            ></span>
             <span class="skill__name">JS (ES6+)</span>
           </div>
           <div class="skill">
@@ -171,90 +174,136 @@
       </section>
       <section id="portfolio" class="portfolio">
         <h2 class="portfolio__heading">Portfolio</h2>
-        <a
-          href="https://damian-balas.github.io/tanatos-studio/"
-          rel="noopener"
-          target="_blank"
-          class="project"
-        >
-          <figure class="project__image">
-            <img
-              class="project__thumbnail"
-              src="./img/tanatos-studio.png"
-              alt="Screenshot of a website called Tanatos Studio"
-            />
-            <figcaption class="project__figcaption">
-              <h3 class="project__title">
-                Simple, non-comercial, one-page website based on a free CYMU PSD
-                template. Made for educational purposes only.
-              </h3>
-            </figcaption>
-          </figure>
-          <div class="project__overlay"></div>
-        </a>
-        <a
-          href="https://damian-balas.github.io/grod-art/"
-          rel="noopener"
-          target="_blank"
-          class="project"
-        >
-          <figure class="project__image">
-            <img
-              class="project__thumbnail"
-              src="./img/grod-art.png"
-              alt="Screenshot of a website called Grod Art"
-            />
-            <figcaption class="project__figcaption">
-              <h3 class="project__title">
-                Coded and designed for Tomasz Grodecki, who needed a website to
-                start selling hand-made wooden decorations.
-              </h3>
-            </figcaption>
-          </figure>
-          <div class="project__overlay"></div>
-        </a>
-        <a
-          href="https://damian-balas.github.io/filterable-list/"
-          rel="noopener"
-          target="_blank"
-          class="project"
-        >
-          <figure class="project__image">
-            <img
-              class="project__thumbnail"
-              src="./img/filterablelist.png"
-              alt=""
-            />
-            <figcaption class="project__figcaption">
-              <h3 class="project__title">
-                Simple website that filters contacts. Made for fun and
-                educational purposes.
-              </h3>
-            </figcaption>
-          </figure>
-          <div class="project__overlay"></div>
-        </a>
-        <a
-          href="https://damian-balas.github.io/speed-typing-game/"
-          rel="noopener"
-          target="_blank"
-          class="project"
-        >
-          <figure class="project__image">
-            <img
-              class="project__thumbnail"
-              src="./img/speed-typing-game.png"
-              alt=""
-            />
-            <figcaption class="project__figcaption">
-              <h3 class="project__title">
-                A project that makes me smile. It's a speed typing game with
-                anti cheat system. How fast can you type?
-              </h3>
-            </figcaption>
-          </figure>
-          <div class="project__overlay"></div>
-        </a>
+        <div class="project">
+          <a
+            href="https://damian-balas.github.io/tanatos-studio/"
+            rel="noopener"
+            target="_blank"
+            class="project__box-link"
+          >
+            <figure class="project__image">
+              <img
+                class="project__thumbnail"
+                src="./img/tanatos-studio.png"
+                alt=""
+              />
+              <figcaption class="project__figcaption">
+                <h3 class="project__title">
+                  Simple, non-comercial, one-page website based on a free CYMU
+                  PSD template. Made for educational purposes only.
+                </h3>
+              </figcaption>
+            </figure>
+            <div class="project__overlay"></div>
+          </a>
+          <div class="project__links">
+            <a class="hover-line" href="https://damian-balas.github.io/tanatos-studio/">Live</a>
+            <a class="hover-line" href="https://github.com/damian-balas/tanatos-studio/">Code</a>
+          </div>
+        </div>
+        <div class="project">
+          <a
+            href="https://damian-balas.github.io/grod-art/"
+            rel="noopener"
+            target="_blank"
+            class="project__box-ink"
+          >
+            <figure class="project__image">
+              <img class="project__thumbnail" src="./img/grod-art.png" alt="" />
+              <figcaption class="project__figcaption">
+                <h3 class="project__title">
+                  Coded and designed for Tomasz Grodecki, who needed a website
+                  to start selling hand-made wooden decorations.
+                </h3>
+              </figcaption>
+            </figure>
+            <div class="project__overlay"></div>
+          </a>
+              <div class="project__links">
+                <a class="hover-line" href="https://damian-balas.github.io/grod-art/">Live</a>
+                <a class="hover-line" href="https://github.com/damian-balas/grod-art/">Code</a>
+              </div>
+        </div>
+        <div class="project">
+          <a
+            href="https://damian-balas.github.io/filterable-list/"
+            rel="noopener"
+            target="_blank"
+            class="project__box-link"
+          >
+            <figure class="project__image">
+              <img
+                class="project__thumbnail"
+                src="./img/filterablelist.png"
+                alt=""
+              />
+              <figcaption class="project__figcaption">
+                <h3 class="project__title">
+                  Simple website that filters contacts. Made for fun and
+                  educational purposes.
+                </h3>
+              </figcaption>
+            </figure>
+            <div class="project__overlay"></div>
+          </a>
+              <div class="project__links">
+                <a class="hover-line" href="https://damian-balas.github.io/filterable-list/">Live</a>
+                <a class="hover-line" href="https://github.com/damian-balas/filterable-list/">Code</a>
+              </div>
+        </div>
+        <div class="project">
+          <a
+            href="https://damian-balas.github.io/speed-typing-game/"
+            rel="noopener"
+            target="_blank"
+            class="project__box-link"
+          >
+            <figure class="project__image">
+              <img
+                class="project__thumbnail"
+                src="./img/speed-typing-game.png"
+                alt=""
+              />
+              <figcaption class="project__figcaption">
+                <h3 class="project__title">
+                  It's a speed typing game with anti cheat system. How fast can
+                  you type?
+                </h3>
+              </figcaption>
+            </figure>
+            <div class="project__overlay"></div>
+          </a>
+              <div class="project__links">
+                <a class="hover-line" href="https://damian-balas.github.io/speed-typing-game/">Live</a>
+                <a class="hover-line" href="https://github.com/damian-balas/speed-typing-game/">Code</a>
+              </div>
+        </div>
+        <div class="project">
+          <a
+            href="https://damian-balas.github.io/damian-balas/"
+            rel="noopener"
+            target="_blank"
+            class="project__box-link"
+          >
+            <figure class="project__image">
+              <img
+                class="project__thumbnail"
+                src="./img/damian-balas.png"
+                alt=""
+              />
+              <figcaption class="project__figcaption">
+                <h3 class="project__title">
+                  My personal portfolio website.
+                </h3>
+              </figcaption>
+            </figure>
+            <div class="project__overlay"></div>
+          </a>
+              <div class="project__links">
+                <a class="hover-line" href="https://damian-balas.github.io/damian-balas/">Live</a>
+                <a class="hover-line" href="https://github.com/damian-balas/damian-balas/">Code</a>
+              </div>
+        </div>
       </section>
       <section id="contact" class="contact">
         <h2 class="contact__heading">Get in touch</h2>
@@ -363,6 +412,6 @@
         </div>
       </footer>
     </main>
-    <script defer src="./js/main.js"></script>
+    <script async src="./js/main.js"></script>
   </body>
 </html>
