@@ -12,7 +12,7 @@ const portfolio = document.querySelector('.portfolio')
 const projects = document.querySelectorAll('.project')
 const skillsSection = document.querySelector('.skills')
 const skills = document.querySelectorAll('.skill')
-
+const preloader = document.querySelector('.preloader')
 // throttle
 function throttle (fn, wait) {
   let time = Date.now()
@@ -23,6 +23,70 @@ function throttle (fn, wait) {
     }
   }
 }
+
+// scroll function
+function scrollIt (destination, duration = 200, easing = 'linear', callback) {
+  const easings = {
+    linear (t) {
+      return t
+    },
+    easeInQuad (t) {
+      return t * t
+    },
+    easeOutQuad (t) {
+      return t * (2 - t)
+    }
+  }
+
+  const start = window.pageYOffset
+  const startTime = 'now' in window.performance ? performance.now() : new Date().getTime()
+
+  const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight)
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight
+  const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop - 120
+  const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset)
+
+  if ('requestAnimationFrame' in window === false) {
+    window.scroll(0, destinationOffsetToScroll)
+    if (callback) {
+      callback()
+    }
+    return
+  }
+
+  function scroll () {
+    const now = 'now' in window.performance ? performance.now() : new Date().getTime()
+    const time = Math.min(1, ((now - startTime) / duration))
+    const timeFunction = easings[easing](time)
+    window.scroll(0, Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start))
+
+    if (window.pageYOffset === destinationOffsetToScroll) {
+      if (callback) {
+        callback()
+      }
+      return
+    }
+
+    requestAnimationFrame(scroll)
+  }
+
+  scroll()
+}
+const scrollLinks = document.querySelectorAll('a[href^="#"]')
+
+scrollLinks.forEach(scrollLink => scrollLink.addEventListener('click', (e) => {
+  e.preventDefault()
+  scrollIt(
+    document.querySelector(scrollLink.getAttribute('href')),
+    900,
+    'easeOutQuad'
+  )
+}))
+
+// hide preloader
+setTimeout(() => {
+  preloader.style.display = 'none'
+}, 5500)
 
 // Hamburger line color change
 function changeHamburgerLineColor () {
@@ -71,33 +135,27 @@ function animateItems () {
   const aboutMeTextDistanceToTop = aboutMeText.getBoundingClientRect().top
   const skillsSectionDistanceToTop = skillsSection.getBoundingClientRect().top
   const contactTextDistanceToTop = contactText.getBoundingClientRect().top
-  const portfolioDistanceToTop = portfolio.getBoundingClientRect().top
   // if aboutMeText is x% in viewport
   const aboutMeTextVisible = aboutMeTextDistanceToTop + windowHeight * 0.3 < windowHeight
   const skillsSectionVisible = skillsSectionDistanceToTop + windowHeight * 0.5 < windowHeight
   const contactTextVisible = contactTextDistanceToTop + windowHeight * 0.4 < windowHeight
-  const portfolioVisible = portfolioDistanceToTop < windowHeight
-
-  if (portfolioVisible && window.innerWidth > 1000) {
-    const offset = (Math.min(0, -windowHeight * 0.3 - portfolioDistanceToTop + 500)) * 0.1
-    projects[0].style.transform = `translate(${offset * 3}%,${offset * 1.5}%)`
-    projects[1].style.transform = `translate(${-offset * 3}%,${offset * 1.5}%)`
-    projects[2].style.transform = `translate(${offset * 3}%,${offset}%)`
-    projects[3].style.transform = `translate(${0}%,${-offset}%)`
-    projects[4].style.transform = `translate(${-offset * 3}%,${offset}%)`
-  } 
-  if (window.innerWidth <= 1000){
-    projects.forEach(project => project.style.transform = 'translate(0,0)')
-  }
 
   // if visible add class
   if (aboutMeTextVisible && !aboutMeText.classList.contains('fade-in')) {
     aboutMeText.classList.add('fade-in')
   }
+
   if (skillsSectionVisible && !skills[0].classList.contains('fade-in')) {
     skills.forEach((skill, index) => setTimeout(() => {
+      skill.classList.remove('fade-out')
       skill.classList.add('fade-in')
-    }, 200 * (index + 1)))
+    }, 85 * (index)))
+  }
+  if (!skillsSectionVisible || skillsSection.getBoundingClientRect().bottom <= 0) {
+    skills.forEach(skill => setTimeout(() => {
+      skill.classList.remove('fade-in')
+      skill.classList.add('fade-out')
+    }, 0))
   }
   if (contactTextVisible && !contactText.classList.contains('slide-left')) {
     contactText.classList.add('slide-left')
