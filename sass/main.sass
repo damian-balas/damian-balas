@@ -22,10 +22,10 @@ $break-big: 62.5em
 @keyframes slideDown
     0%
         opacity: 0
-        transform: translateY(-3rem)
+        transform: translateY(-6rem)
     100%
         opacity: 1
-        transform: translateY(0)
+        transform: translate3d(0,0,0) translateY(0)
 
 @keyframes slideUpScroll
     0%
@@ -33,21 +33,21 @@ $break-big: 62.5em
         transform: translate(-50%, 3rem)
     100%
         opacity: 1
-        transform: translate(-50%, 0)
+        transform: translate3d(0,0,0) translate(-50%, 0)
 
 @keyframes slideUp
     0%
         transform: translateY(0)
     100%
-        transform: translateY(-4rem)
+        transform: translate3d(0,0,0) translateY(-4rem)
 
 @keyframes slideLeft
     0%
         opacity: 0
-        transform: translateX(-3rem)
+        transform: translateX(-4rem)
     100%
         opacity: 1
-        transform: translateX(0)
+        transform: translate3d(0,0,0) translateX(0)
 
 @keyframes heroIconSlideLeft
     0%
@@ -55,22 +55,22 @@ $break-big: 62.5em
         transform: translate(10%, -50%)
     100%
         opacity: .1
-        transform: translate(-10%, -50%)
+        transform: translate3d(0,0,0) translate(-10%, -50%)
 
 @keyframes slideRight
     0%
         opacity: 0
-        transform: translateX(3rem)
+        transform: translateX(4rem)
     100%
         opacity: 1
-        transform: translateX(0)
+        transform: translate3d(0,0,0) translateX(0)
 
 @keyframes fadeIn
     0%,
         opacity: 0
         transform: translateY(-3rem)
     100%
-        transform: translateY(0)
+        transform: translate3d(0,0,0) translateY(0)
         opacity: 1
 
 @keyframes fadeOut
@@ -78,7 +78,7 @@ $break-big: 62.5em
         opacity: 1
         transform: translateY(0)
     100%
-        transform: translateY(-3rem)
+        transform: translate3d(0,0,0) translateY(-3rem)
         opacity: 0
 
 *
@@ -164,13 +164,15 @@ main
     &__pic
         position: absolute
         top: -2rem
+        will-change: transform
+        transform: translate3d(0,0,0) translateZ(0)
         left: 0
         width: 100%
         z-index: 1000
         transform-origin: top
         backface-visibility: hidden
-        transform: scale(1.3, 1.5)
-        animation: preloader 1.25s ease-out 4s forwards
+        transform: scaleX(1.3) scaleY(1.5)
+        animation: preloader 1.7s ease 1.5s forwards
         path
             fill: #387f99
     &__text
@@ -179,30 +181,27 @@ main
         left: 50%
         transform: translate(-50%, -50%)
         z-index: 1005
-        animation: textFadeOut 600ms ease 4.25s forwards, fillText 500ms ease forwards 3.25s
-        & > path
-            stroke-dasharray: 100%
-            stroke-dashoffset: 100%
+        animation: textFadeOut 400ms ease 1.7s forwards, fillText 500ms ease forwards 1.2s
         & > path:nth-of-type(1)
-            animation: preloaderText 1s ease forwards
+            stroke-dasharray: 440.0051574707031
+            stroke-dashoffset: 440.0051574707031
+            animation: preloaderText 600ms ease forwards
         & > path:nth-of-type(2)
-            animation: preloaderText 1s ease forwards .2s
+            stroke-dasharray: 363.2081604003906
+            stroke-dashoffset: 363.2081604003906
+            animation: preloaderText 600ms ease forwards .2s
         & > path:nth-of-type(3)
-            animation: preloaderText 1s ease forwards .5s
+            stroke-dasharray: 253.4559783935547
+            stroke-dashoffset: 253.4559783935547
+            animation: preloaderText 600ms ease forwards .4s
         & > path:nth-of-type(4)
-            animation: preloaderText 1s ease forwards .8s
+            stroke-dasharray: 253.4559783935547
+            stroke-dashoffset: 253.4559783935547
+            animation: preloaderText 600ms ease forwards .6s
         & > path:nth-of-type(5)
-            animation: preloaderText 1s ease forwards 1.1s
-        & > path:nth-of-type(6)
-            animation: preloaderText 1s ease forwards 1.4s
-        & > path:nth-of-type(7)
-            animation: preloaderText 1s ease forwards 1.7s
-        & > path:nth-of-type(8)
-            animation: preloaderText 1s ease forwards 2s
-        & > path:nth-of-type(9)
-            animation: preloaderText 1s ease forwards 2.3s
-        & > path:nth-of-type(10)
-            animation: preloaderText 1s ease forwards 2.6s
+            stroke-dasharray: 335.2448425292969
+            stroke-dashoffset: 335.2448425292969
+            animation: preloaderText 600ms ease forwards .8s
 
 @keyframes preloaderText
     100%
@@ -215,15 +214,14 @@ main
         fill: white
 
 @keyframes textFadeOut
-    30%
+    0%
         opacity: 1
     100%
-        transform: translate(-50%, -350%)
         opacity: 0
         
 @keyframes preloader
     100%
-        transform: scale(1.3, 0) translate3d(0, 0, 0)      
+        transform: scaleX(1.3) scaleY(0)
 
 .site-header
     z-index: 100
@@ -237,7 +235,6 @@ main
     padding: 0 1rem
     justify-content: space-between
     overflow-x: hidden
-    animation: slideDown 1s cubic-bezier(.24, .45, .44, .93)
     &__logo
         color: white
         font-weight: 300
@@ -257,7 +254,7 @@ main
         transition: all .3s cubic-bezier(.24, .45, .44, .93)
         &__ul
             list-style: none
-            width: 80%
+            width: calc(100% - 3.5rem)
             height: 5rem
             display: flex
             flex-direction: row
@@ -287,42 +284,42 @@ main
         width: 3rem
         border: none
         position: fixed
-        right: 1rem
+        right: 0
         z-index: 100
         background: transparent
         cursor: pointer
         &__line
             height: 5px
-            width: 85%
+            width: 2rem
             border-radius: 3px
             background-color: #fff
             position: absolute
             border: 1px solid rgba(0, 0, 0, .5)
-            top: 30%
-            right: 0
+            top: calc(50% - 10px)
+            right: 8.8px
             transition: all .15s ease-in-out, background .35s ease-out
             &:nth-of-type(2)
-                width: 75%
-                top: 50%
+                top: calc(50% - 2.5px)
             &:nth-of-type(3)
-                width: 65%
-                top: 70%
-        &:hover .hamburger__line
-            width: 85%
-        &:hover, &:focus
+                top: calc(50% + 5.5px)
+        &:hover
             opacity: .7
             transform: scale(1.1)
+        &:focus
+            transform: scale(1.1)
+            outline: none
         &.is-active
             .hamburger__line:nth-of-type(2)
-                transform: rotate(45deg) scale(.6)
+                transform: rotate(45deg) scale(0.65)
                 top: 45%
             .hamburger__line:nth-of-type(3)
                 opacity: 0
             .hamburger__line:nth-of-type(4)
-                transform: rotate(-45deg) scale(.6)
+                transform: rotate(-45deg) scale(0.65)
                 top: 45%
             .hamburger__line
                 opacity: 1
+                right: 4.4px
                 width: 85%
                 background-color: #343434
                 transform-origin: center
@@ -354,15 +351,16 @@ main
         position: absolute
         top: 50%
         right: 0
-        opacity: .1
+        opacity: 0
         color: white
         font-size: calc(20vh + 20vw)
         transform: translate(0, -50%)
-        animation: heroIconSlideLeft 1s cubic-bezier(.24, .45, .44, .93) forwards
+        animation: heroIconSlideLeft 1s cubic-bezier(.24, .45, .44, .93) forwards 2.3s
     &__text, &__heading
         color: white
         padding-left: 1rem
-        animation: slideLeft 1s cubic-bezier(.24, .45, .44, .93)
+        opacity: 0
+        animation: slideLeft 1s cubic-bezier(.24, .45, .44, .93) forwards 2.3s
     &__heading
         font-size: 2.1rem
         font-weight: 300
@@ -465,7 +463,7 @@ main
     width: 85%
     max-width: 40rem
     background-color: white
-    animation: slideUp 1.2s cubic-bezier(.24, .45, .44, .93) forwards
+    animation: slideUp 1s forwards 1.8s
     .good-looking-guy
         width: 12.5rem
         height: 12.5rem
@@ -483,9 +481,8 @@ main
         &__img
             margin-top: 4rem
             display: block
-            width: 120%
+            width: 100%
             filter: contrast(.8)
-            animation: shrink 1s cubic-bezier(.24, .45, .44, .93) forwards
     &__heading
         text-align: center
         font-size: 2.4rem
@@ -641,8 +638,6 @@ main
             opacity: 1
         .project__overlay
             opacity: .7
-        .project__links
-            clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%)
     .project
         width: 100%
         text-decoration: none
@@ -660,8 +655,6 @@ main
                 opacity: 1
             .project__overlay
                 opacity: .7
-            .project__links
-                clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%)
 
         &:focus
             transform: scale(.95)
@@ -709,8 +702,7 @@ main
             position: absolute
             bottom: 0
             width: 100%
-            height: 3.5rem
-            clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)
+            height: 3rem
             background: rgba(0,0,0,7)
             transition: .45s ease-out
             display: flex
@@ -728,12 +720,6 @@ main
                 justify-content: center
                 min-height: 3rem
                 min-width: 3rem
-
-@media (min-width: 24em)
-    .portfolio
-        .project
-            &__links
-                height: 4.5rem
 
 @media (min-width: $break-small)
     .portfolio
