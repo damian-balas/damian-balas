@@ -87,6 +87,24 @@ $break-big: 62.5em
 
 *, *::before, *::after
     box-sizing: inherit
+
+::-webkit-scrollbar 
+    width: 8px
+    background-color: #F5F5F5
+
+
+::-webkit-scrollbar-track 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+    background-color: #F5F5F5
+
+
+::-webkit-scrollbar-thumb 
+    background: #343434
+
+
+::-webkit-scrollbar-thumb:hover 
+    background: #555
+
 html
     font-family: Josefin Sans, Ubuntu, sans-serif
     line-height: 1.5
@@ -94,6 +112,7 @@ html
     color: #343434
 body
     background: url('../img/geometry.png')
+    background: #e7e9ee
     position: relative
 
 h1, h2, h3, h4, h5, h6
@@ -255,6 +274,7 @@ main
         &__ul
             list-style: none
             width: calc(100% - 3.5rem)
+            max-width: 40rem
             height: 5rem
             display: flex
             flex-direction: row
@@ -271,11 +291,11 @@ main
             align-items: center
             text-align: center
             text-decoration: none
-            font-size: 1.2rem
+            font-size: 1rem
             color: #343434
             transition: transform .2s ease
             &:focus, &:hover
-                transform: scale(1.1)
+                transform: translateY(0.25rem) perspective(1px)
         &.show
             transform: translateX(-120%)
             z-index: 100
@@ -337,9 +357,17 @@ main
         .hamburger
             right: 2rem
 
+@media (min-width: $break-big)
+    .site-header
+        .site-nav
+            &__ul
+                margin: 0 auto
+            &__link
+                font-size: 1.2rem
+
 .hero
     padding-top: 6.5rem
-    min-height: 80vh
+    min-height: 100vh
     position: relative
     display: flex
     overflow-x: hidden
@@ -356,22 +384,24 @@ main
         font-size: calc(20vh + 20vw)
         transform: translate(0, -50%)
         animation: heroIconSlideLeft 1s cubic-bezier(.24, .45, .44, .93) forwards 2.3s
-    &__text, &__heading
+    &__sub-heading, &__heading
         color: white
-        padding-left: 1rem
+        text-align: center
         opacity: 0
         animation: slideLeft 1s cubic-bezier(.24, .45, .44, .93) forwards 2.3s
     &__heading
-        font-size: 2.1rem
-        font-weight: 300
-    &__text
+        font-size: 2.8rem
+        line-height: 1.25
+    &__sub-heading
         color: #afd3da
-        font-size: 1.2rem
+        font-size: 1.6rem
 
     .scroll-down
         position: absolute
         top: 0
         left: 50%
+        min-width: 3rem
+        text-align: center
         font-weight: 300
         transform: translateX(-50%)
         text-decoration: none
@@ -425,34 +455,31 @@ main
 
 @media (min-width: 24em)
     .hero__heading
-        font-size: 2.6rem
-    .hero__text
+        font-size: 3.2rem
+    .hero__sub-heading
         font-size: 1.6rem
 
 @media (min-width: $break-small)
     .hero
-        &__text, &__heading
-            width: 85%
-            padding: 0
-            margin: 0 auto
         &__heading
-            font-size: 2.8rem
-        &__text
-            font-size: 1.8rem
+            font-size: 4.2rem
+        &__sub-heading
+            font-size: 2rem
         .scroll-down
             &__wrapper
-                margin-bottom: 10rem
+                margin-bottom: 5rem
 
 @media (min-width: $break-big)
     .hero
-        &__text, &__heading
-            width: 85%
-            padding: 0
-            margin: 0 auto
+        &__text-wrapper
+            padding-top: 3rem
+            padding-bottom: 5rem
+        .scroll-down__wrapper
+            margin-bottom: 5rem
         &__heading
-            font-size: 3.2rem
-        &__text
-            font-size: 2rem
+            font-size: 6rem
+        &__sub-heading
+            font-size: 2.6rem
 
 .about-me
     margin: 0 auto
@@ -481,7 +508,7 @@ main
         &__img
             margin-top: 4rem
             display: block
-            width: 100%
+            width: 90%
             filter: contrast(.8)
     &__heading
         text-align: center
@@ -519,7 +546,7 @@ main
                 font-size: 1.6rem
     &__btn
         margin: 0 auto
-        margin-top: 1.5rem
+        margin-top: 2.5rem
         text-decoration: none
         font-size: 1.6rem
         border: 1px solid #387F99
@@ -758,7 +785,7 @@ main
     padding: 5rem 2rem 9rem 
     min-height: 57.5rem
     overflow-x: hidden
-    background: linear-gradient(to right top, #8cc7c3, #6bb6c0, #4ea4bf, #3e90bc, #437ab4), url('../img/gplaypattern.png')
+    background: linear-gradient(to right top, #8cc7c3, #6bb6c0, #4ea4bf, #3e90bc, #437ab4), url('../img/email-pattern.png')
     background-blend-mode: multiply
     color: white
     &__heading
@@ -808,11 +835,11 @@ main
                     transform: scale(1.025)
                     box-shadow: 3px 3px 15px -5px black
             &__textarea
-                min-height: 9rem
+                min-height: 15rem
                 line-height: 1.4
                 resize: vertical
             &__submit-btn
-                margin: 1.5rem 0 0 auto
+                margin: 2.5rem 0 0 auto
                 text-decoration: none
                 font-size: 1.6rem
                 font-family: inherit
@@ -849,9 +876,9 @@ main
             text-decoration: none
             color: white
             font-size: 1.2rem
-            transition: .25s ease-in-out
+            transition: .2s ease-in-out
             &:hover, &:focus
-                transform: scale(1.1)
+                transform: scale(1.1) translateY(-0.25rem)
                 .socials__icon
                     background: white
                     border: 1px solid white
