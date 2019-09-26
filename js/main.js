@@ -8,8 +8,8 @@ const aboutMeText = document.querySelector('.about-me__text')
 const contact = document.querySelector('.contact')
 const contactText = document.querySelector('.contact__text')
 const contactForm = document.querySelector('.contact__form')
-const portfolio = document.querySelector('.portfolio')
-const projects = document.querySelectorAll('.project')
+// const portfolio = document.querySelector('.portfolio')
+// const projects = document.querySelectorAll('.project')
 const skillsSection = document.querySelector('.skills')
 const skills = document.querySelectorAll('.skill')
 const preloader = document.querySelector('.preloader')
@@ -105,15 +105,8 @@ function animateItems () {
 
   if (skillsSectionVisible && !skills[0].classList.contains('fade-in')) {
     skills.forEach((skill, index) => setTimeout(() => {
-      skill.classList.remove('fade-out')
       skill.classList.add('fade-in')
     }, 85 * (index)))
-  }
-  if (!skillsSectionVisible || skillsSection.getBoundingClientRect().bottom <= 0) {
-    skills.forEach(skill => setTimeout(() => {
-      skill.classList.remove('fade-in')
-      skill.classList.add('fade-out')
-    }, 0))
   }
   if (contactTextVisible && !contactText.classList.contains('slide-left')) {
     contactText.classList.add('slide-left')

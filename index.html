@@ -82,10 +82,10 @@
       <section class="hero">
         <span aria-hidden="true" class="hero__bg-icon icon icon-code"></span>
         <div class="hero__text-wrapper">
-          <h2 class="hero__heading">Damian Balas<br />Front-End Developer</h2>
-          <p class="hero__text">
-            Scroll down and get to know me
-          </p>
+          <h2 class="hero__heading">Damian Balas</h2>
+          <h3 class="hero__sub-heading">
+            Front-End Developer
+          </h3>
         </div>
         <div class="scroll-down__wrapper">
           <a class="scroll-down" href="#about-me"
@@ -205,7 +205,7 @@
         </div>
       </section>
       <section id="portfolio" class="portfolio">
-        <h2 class="portfolio__heading">Portfolio</h2>
+        <h2 class="portfolio__heading">My recent projects</h2>
         <div class="project">
           <a
             href="https://damian-balas.github.io/tanatos-studio/"
@@ -388,9 +388,10 @@
         </p>
         <div class="contact__wrapper">
           <div class="contact__form">
-            <form class="form">
+            <form class="form" action="https://formspree.io/damian.webdev@gmail.com" method="POST">
               <fieldset>
                 <legend class="sr-only">Form contents</legend>
+                <input type="text" name="_gotcha" style="display:none" />
                 <div class="form__field">
                   <label class="form__label" for="email">Email</label>
                   <input
@@ -400,7 +401,7 @@
                     required
                     placeholder="example@mail.com"
                     autocomplete="email"
-                    name="replyto"
+                    name="_replyto"
                   />
                 </div>
                 <div class="form__field">

@@ -254,6 +254,24 @@
           box-sizing: inherit;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #343434;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 html {
   font-family: Josefin Sans, Ubuntu, sans-serif;
   line-height: 1.5;
@@ -264,6 +282,7 @@ html {
 
 body {
   background: url("../img/geometry.png");
+  background: #e7e9ee;
   position: relative;
 }
 
@@ -530,6 +549,7 @@ main {
 .site-header .site-nav__ul {
   list-style: none;
   width: calc(100% - 3.5rem);
+  max-width: 40rem;
   height: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -569,7 +589,7 @@ main {
           align-items: center;
   text-align: center;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #343434;
   -webkit-transition: -webkit-transform .2s ease;
   transition: -webkit-transform .2s ease;
@@ -578,8 +598,8 @@ main {
 }
 
 .site-header .site-nav__link:focus, .site-header .site-nav__link:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: translateY(0.25rem) perspective(1px);
+          transform: translateY(0.25rem) perspective(1px);
 }
 
 .site-header .site-nav.show {
@@ -676,9 +696,18 @@ main {
   }
 }
 
+@media (min-width: 62.5em) {
+  .site-header .site-nav__ul {
+    margin: 0 auto;
+  }
+  .site-header .site-nav__link {
+    font-size: 1.2rem;
+  }
+}
+
 .hero {
   padding-top: 6.5rem;
-  min-height: 80vh;
+  min-height: 100vh;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -708,28 +737,30 @@ main {
           animation: heroIconSlideLeft 1s cubic-bezier(0.24, 0.45, 0.44, 0.93) forwards 2.3s;
 }
 
-.hero__text, .hero__heading {
+.hero__sub-heading, .hero__heading {
   color: white;
-  padding-left: 1rem;
+  text-align: center;
   opacity: 0;
   -webkit-animation: slideLeft 1s cubic-bezier(0.24, 0.45, 0.44, 0.93) forwards 2.3s;
           animation: slideLeft 1s cubic-bezier(0.24, 0.45, 0.44, 0.93) forwards 2.3s;
 }
 
 .hero__heading {
-  font-size: 2.1rem;
-  font-weight: 300;
+  font-size: 2.8rem;
+  line-height: 1.25;
 }
 
-.hero__text {
+.hero__sub-heading {
   color: #afd3da;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
 }
 
 .hero .scroll-down {
   position: absolute;
   top: 0;
   left: 50%;
+  min-width: 3rem;
+  text-align: center;
   font-weight: 300;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -824,41 +855,38 @@ main {
 
 @media (min-width: 24em) {
   .hero__heading {
-    font-size: 2.6rem;
+    font-size: 3.2rem;
   }
-  .hero__text {
+  .hero__sub-heading {
     font-size: 1.6rem;
   }
 }
 
 @media (min-width: 42.5em) {
-  .hero__text, .hero__heading {
-    width: 85%;
-    padding: 0;
-    margin: 0 auto;
-  }
   .hero__heading {
-    font-size: 2.8rem;
+    font-size: 4.2rem;
   }
-  .hero__text {
-    font-size: 1.8rem;
+  .hero__sub-heading {
+    font-size: 2rem;
   }
   .hero .scroll-down__wrapper {
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
   }
 }
 
 @media (min-width: 62.5em) {
-  .hero__text, .hero__heading {
-    width: 85%;
-    padding: 0;
-    margin: 0 auto;
+  .hero__text-wrapper {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+  }
+  .hero .scroll-down__wrapper {
+    margin-bottom: 5rem;
   }
   .hero__heading {
-    font-size: 3.2rem;
+    font-size: 6rem;
   }
-  .hero__text {
-    font-size: 2rem;
+  .hero__sub-heading {
+    font-size: 2.6rem;
   }
 }
 
@@ -903,7 +931,7 @@ main {
 .about-me .good-looking-guy__img {
   margin-top: 4rem;
   display: block;
-  width: 100%;
+  width: 90%;
   -webkit-filter: contrast(0.8);
           filter: contrast(0.8);
 }
@@ -977,7 +1005,7 @@ main {
 
 .about-me__btn {
   margin: 0 auto;
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
   text-decoration: none;
   font-size: 1.6rem;
   border: 1px solid #387F99;
@@ -1362,8 +1390,8 @@ main {
   padding: 5rem 2rem 9rem;
   min-height: 57.5rem;
   overflow-x: hidden;
-  background: -webkit-gradient(linear, left bottom, right top, from(#8cc7c3), color-stop(#6bb6c0), color-stop(#4ea4bf), color-stop(#3e90bc), to(#437ab4)), url("../img/gplaypattern.png");
-  background: linear-gradient(to right top, #8cc7c3, #6bb6c0, #4ea4bf, #3e90bc, #437ab4), url("../img/gplaypattern.png");
+  background: -webkit-gradient(linear, left bottom, right top, from(#8cc7c3), color-stop(#6bb6c0), color-stop(#4ea4bf), color-stop(#3e90bc), to(#437ab4)), url("../img/email-pattern.png");
+  background: linear-gradient(to right top, #8cc7c3, #6bb6c0, #4ea4bf, #3e90bc, #437ab4), url("../img/email-pattern.png");
   background-blend-mode: multiply;
   color: white;
 }
@@ -1452,13 +1480,13 @@ main {
 }
 
 .contact__form .form__textarea {
-  min-height: 9rem;
+  min-height: 15rem;
   line-height: 1.4;
   resize: vertical;
 }
 
 .contact__form .form__submit-btn {
-  margin: 1.5rem 0 0 auto;
+  margin: 2.5rem 0 0 auto;
   text-decoration: none;
   font-size: 1.6rem;
   font-family: inherit;
@@ -1510,13 +1538,13 @@ main {
   text-decoration: none;
   color: white;
   font-size: 1.2rem;
-  -webkit-transition: .25s ease-in-out;
-  transition: .25s ease-in-out;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
 .contact .socials__link:hover, .contact .socials__link:focus {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.1) translateY(-0.25rem);
+          transform: scale(1.1) translateY(-0.25rem);
 }
 
 .contact .socials__link:hover .socials__icon, .contact .socials__link:focus .socials__icon {
