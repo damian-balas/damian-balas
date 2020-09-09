@@ -5,18 +5,14 @@ backend:
   site_domain: zealous-swanson-69cd5f.netlify.com
 
 media_folder: "images/uploads"
-extension: "json"
-format: "json"
 collections:
   - name: "skills"
     label: "Skills"
     folder: "_content/"
     create: true
-    file: "skills.json"
     extension: "json"
     format: "json"
-    slug: "skills.json"
-    field:
+    fields:
       - label: "Skills"
         name: "skills"
         widget: "list"
@@ -34,10 +30,8 @@ collections:
     label: "Projects"
     folder: "_content/"
     create: true
-    file: "projects.json"
     extension: "json"
     format: "json"
-    slug: "projects.json"
     fields:
       - { label: "Live", name: "live", widget: "string" }
       - { label: "Repo", name: "repo", widget: "string" }
