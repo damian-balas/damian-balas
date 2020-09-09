@@ -1,0 +1,10 @@
+{
+  "skills": [
+    {
+      "name": "HTML",
+      "title": "HyperText Markup Language",
+      "icon": "/images/uploads/html5-svgrepo-com.svg",
+      "category": "Fluent"
+    }
+  ]
+}
