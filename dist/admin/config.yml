@@ -34,7 +34,7 @@ collections:
     file: "projects.json"
     extension: "json"
     format: "json"
-    slug: "projects.json"
+    slug: "projects"
     widget: "list"
     widgets:
       - { label: "Live", name: "live", widget: "string" }
