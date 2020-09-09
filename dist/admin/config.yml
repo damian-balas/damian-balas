@@ -13,9 +13,9 @@ collections:
     folder: "_content/"
     create: true
     file: "skills.json"
-    slug: "{{slug}}"
     extension: "json"
     format: "json"
+    slug: "skills.json"
     fields:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Title", name: "title", widget: "string" }
@@ -31,9 +31,9 @@ collections:
     folder: "_content/"
     create: true
     file: "projects.json"
-    slug: "{{slug}}"
     extension: "json"
     format: "json"
+    slug: "projects.json"
     fields:
       - { label: "Live", name: "live", widget: "string" }
       - { label: "Repo", name: "repo", widget: "string" }
