@@ -13,7 +13,8 @@ collections:
     folder: "_content/"
     extension: "json"
     format: "json"
-    slug: "skill"
+    slug: "skill
+    create: true"
     widget: "list"
     widgets:
       - { label: "Name", name: "name", widget: "string" }
@@ -31,6 +32,7 @@ collections:
     extension: "json"
     format: "json"
     slug: "projects"
+    create: true
     widget: "list"
     widgets:
       - { label: "Live", name: "live", widget: "string" }
