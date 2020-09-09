@@ -12,6 +12,7 @@ collections:
     create: true
     extension: "json"
     format: "json"
+    slug: "skills"
     fields:
       - label: "Skills"
         name: "skills"
@@ -32,8 +33,13 @@ collections:
     create: true
     extension: "json"
     format: "json"
+    slug: "projects"
     fields:
-      - { label: "Live", name: "live", widget: "string" }
-      - { label: "Repo", name: "repo", widget: "string" }
-      - { label: "Body", name: "body", widget: "string" }
-      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
+      - label: "Skills"
+        name: "skills"
+        widget: "list"
+        fields:
+          - { label: "Live", name: "live", widget: "string" }
+          - { label: "Repo", name: "repo", widget: "string" }
+          - { label: "Body", name: "body", widget: "string" }
+          - { label: "Thumbnail", name: "thumbnail", widget: "image" }
