@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/damian-balas/damian-balas/issues"
   },
-  "homepage": "https://github.com/damian-balas/damian-balas#readme",
+  "homepage": "damianbalas.pl",
   "devDependencies": {
     "eslint": "^6.2.2",
     "eslint-config-standard": "^14.0.1",
