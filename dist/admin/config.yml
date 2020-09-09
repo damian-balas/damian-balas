@@ -7,10 +7,12 @@ backend:
 media_folder: "images/uploads"
 extension: "json"
 format: "json"
+create: true
 collections:
   - label: "Testimonials"
     name: "testimonials"
     widget: "list"
+    create: true
     summary: "{{fields.quote}} - {{fields.author.name}}"
     fields:
       - {
