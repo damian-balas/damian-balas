@@ -11,13 +11,10 @@ collections:
   - name: "skills"
     label: "Skills"
     folder: "_content/"
-    create: true
-    file: "skills.json"
     extension: "json"
     format: "json"
     slug: "skills"
-    widget: "list"
-    widgets:
+    fields:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Icon", name: "icon", widget: "image" }
@@ -30,13 +27,10 @@ collections:
   - name: "projects"
     label: "Projects"
     folder: "_content/"
-    create: true
-    file: "projects.json"
     extension: "json"
     format: "json"
     slug: "projects"
-    widget: "list"
-    widgets:
+    fields:
       - { label: "Live", name: "live", widget: "string" }
       - { label: "Repo", name: "repo", widget: "string" }
       - { label: "Body", name: "body", widget: "string" }
