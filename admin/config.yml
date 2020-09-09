@@ -15,18 +15,21 @@ collections:
     file: "skills.json"
     extension: "json"
     format: "json"
-    slug: "skills"
-    widget: "list"
-    widgets:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Icon", name: "icon", widget: "image" }
-      - {
-          label: "Category",
-          name: "category",
-          widget: "select",
-          options: ["Fluent", "Good", "Learning"],
-        }
+    slug: "skills.json"
+    field:
+      - label: "Skills"
+        name: "skills"
+        widget: "list"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Icon", name: "icon", widget: "image" }
+          - {
+              label: "Category",
+              name: "category",
+              widget: "select",
+              options: ["Fluent", "Good", "Learning"],
+            }
   - name: "projects"
     label: "Projects"
     folder: "_content/"
@@ -35,8 +38,7 @@ collections:
     extension: "json"
     format: "json"
     slug: "projects.json"
-    widget: "list"
-    widgets:
+    fields:
       - { label: "Live", name: "live", widget: "string" }
       - { label: "Repo", name: "repo", widget: "string" }
       - { label: "Body", name: "body", widget: "string" }
