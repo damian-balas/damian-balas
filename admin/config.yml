@@ -15,11 +15,12 @@ collections:
     file: "skills.json"
     extension: "json"
     format: "json"
-    slug: "skills.json"
+    slug: "skills"
     field:
       - label: "Skills"
         name: "skills"
         widget: "list"
+        summary: "{{fields.name}}"
         fields:
           - { label: "Name", name: "name", widget: "string" }
           - { label: "Title", name: "title", widget: "string" }
