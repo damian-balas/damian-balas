@@ -13,8 +13,8 @@ collections:
     folder: "_content/"
     extension: "json"
     format: "json"
-    slug: "skill
-    create: true"
+    slug: "skill"
+    create: true
     widget: "list"
     widgets:
       - { label: "Name", name: "name", widget: "string" }
