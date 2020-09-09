@@ -925,11 +925,9 @@ main {
 }
 
 .about-me .good-looking-guy__img {
-  margin-top: 4rem;
+  margin-left: 1.75rem;
   display: block;
-  width: 90%;
-  -webkit-filter: contrast(0.8);
-          filter: contrast(0.8);
+  width: 120%;
 }
 
 .about-me__heading {
