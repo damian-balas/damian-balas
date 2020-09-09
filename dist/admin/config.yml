@@ -8,12 +8,12 @@ media_folder: "images/uploads"
 extension: "json"
 format: "json"
 collections:
-  - name: "skills"
-    label: "Skills"
+  - name: "skill"
+    label: "Skill"
     folder: "_content/"
     extension: "json"
     format: "json"
-    slug: "skills"
+    slug: "skill"
     fields:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Title", name: "title", widget: "string" }
@@ -24,8 +24,8 @@ collections:
           widget: "select",
           options: ["Fluent", "Good", "Learning"],
         }
-  - name: "projects"
-    label: "Projects"
+  - name: "project"
+    label: "Project"
     folder: "_content/"
     extension: "json"
     format: "json"
