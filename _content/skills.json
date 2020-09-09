@@ -5,6 +5,60 @@
       "title": "HyperText Markup Language",
       "icon": "/images/uploads/html5-svgrepo-com.svg",
       "category": "Fluent"
+    },
+    {
+      "name": "CSS",
+      "title": "Cascading Style Sheets",
+      "icon": "/images/uploads/css3-svgrepo-com.svg",
+      "category": "Fluent"
+    },
+    {
+      "name": "SASS",
+      "title": "Syntactically Awesome Style Sheets",
+      "icon": "/images/uploads/sass-1.svg",
+      "category": "Fluent"
+    },
+    {
+      "name": "RWD",
+      "title": "Responsive Web Design",
+      "icon": "/images/uploads/responsive-design.svg",
+      "category": "Fluent"
+    },
+    {
+      "name": "GIT",
+      "title": "GIT",
+      "icon": "/images/uploads/git.svg",
+      "category": "Good"
+    },
+    {
+      "name": "JS (ES6+)",
+      "title": "JavaScript ECMAScript 2015",
+      "icon": "/images/uploads/javascript-svgrepo-com.svg",
+      "category": "Good"
+    },
+    {
+      "name": "Accessibility",
+      "icon": "/images/uploads/wheelchair-svgrepo-com.svg",
+      "category": "Good",
+      "title": "Accessibility"
+    },
+    {
+      "name": "React",
+      "category": "Good",
+      "icon": "/images/uploads/react-svgrepo-com.svg",
+      "title": "React"
+    },
+    {
+      "name": "React Native",
+      "category": "Good",
+      "icon": "/images/uploads/react-svgrepo-com.svg",
+      "title": "React Native"
+    },
+    {
+      "name": "Redux",
+      "category": "Good",
+      "icon": "/images/uploads/redux-svgrepo-com.svg",
+      "title": "Redux"
     }
   ]
 }
