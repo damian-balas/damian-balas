@@ -1,0 +1,39 @@
+backend:
+  name: github
+  repo: damian-balas/damian-balas
+  branch: gh-pages
+  site_domain: zealous-swanson-69cd5f.netlify.com
+
+media_folder: "images/uploads"
+collections:
+  - name: "skills"
+    label: "Skills"
+    folder: "_content/"
+    create: true
+    extension: "json"
+    format: "json"
+    fields:
+      - label: "Skills"
+        name: "skills"
+        widget: "list"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Icon", name: "icon", widget: "image" }
+          - {
+              label: "Category",
+              name: "category",
+              widget: "select",
+              options: ["Fluent", "Good", "Learning"],
+            }
+  - name: "projects"
+    label: "Projects"
+    folder: "_content/"
+    create: true
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Live", name: "live", widget: "string" }
+      - { label: "Repo", name: "repo", widget: "string" }
+      - { label: "Body", name: "body", widget: "string" }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
