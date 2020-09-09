@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: damian-balas/damian-balas
-  branch: master
+  branch: gh-pages
   site_domain: zealous-swanson-69cd5f.netlify.com
 
 media_folder: "images/uploads"
