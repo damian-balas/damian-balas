@@ -8,45 +8,19 @@ media_folder: "images/uploads"
 extension: "json"
 format: "json"
 collections:
-  - label: "Home Section"
-    name: "sections"
+  - label: "Testimonials"
+    name: "testimonials"
     widget: "list"
-    types:
-      - label: "Carousel"
-        name: "carousel"
-        widget: object
-        summary: "{{fields.header}}"
-        fields:
-          - {
-              label: Header,
-              name: header,
-              widget: string,
-              default: "Image Gallery",
-            }
-          - {
-              label: Template,
-              name: template,
-              widget: string,
-              default: "carousel.html",
-            }
-          - label: Images
-            name: images
-            widget: list
-            field: { label: Image, name: image, widget: image }
-      - label: "Spotlight"
-        name: "spotlight"
+    summary: "{{fields.quote}} - {{fields.author.name}}"
+    fields:
+      - {
+          label: Quote,
+          name: quote,
+          widget: string,
+          default: "Everything is awesome!",
+        }
+      - label: Author
+        name: author
         widget: object
         fields:
-          - {
-              label: Header,
-              name: header,
-              widget: string,
-              default: "Spotlight",
-            }
-          - {
-              label: Template,
-              name: template,
-              widget: string,
-              default: "spotlight.html",
-            }
-          - { label: Text, name: text, widget: text, default: "Hello World" }
+          - { label: Name, name: name, widget: string, default: "Emmet" }
