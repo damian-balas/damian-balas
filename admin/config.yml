@@ -34,10 +34,9 @@ collections:
     file: "projects.json"
     extension: "json"
     format: "json"
-    slug: "projects"
-    widget: "list"
-    widgets:
-      - { label: "Live URL", name: "live", widget: "string" }
-      - { label: "Repo URL", name: "repo", widget: "string" }
+    slug: "projects.json"
+    fields:
+      - { label: "Live", name: "live", widget: "string" }
+      - { label: "Repo", name: "repo", widget: "string" }
       - { label: "Body", name: "body", widget: "string" }
       - { label: "Thumbnail", name: "thumbnail", widget: "image" }
