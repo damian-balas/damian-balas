@@ -16,7 +16,7 @@ collections:
     format: "json"
     slug: "skills"
     widget: "list"
-    widgets:
+    fields:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Icon", name: "icon", widget: "image" }
@@ -34,7 +34,7 @@ collections:
     format: "json"
     slug: "projects"
     widget: "list"
-    widgets:
+    fields:
       - { label: "Live", name: "live", widget: "string" }
       - { label: "Repo", name: "repo", widget: "string" }
       - { label: "Body", name: "body", widget: "string" }
