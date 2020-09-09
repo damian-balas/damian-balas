@@ -1,0 +1,16 @@
+{
+  "skills": [
+    {
+      "category": "Fluent",
+      "name": "HTML",
+      "title": "HyperText Markup Language",
+      "icon": "/images/uploads/html5-svgrepo-com.svg"
+    },
+    {
+      "name": "CSS",
+      "title": "Cascading Style Sheets",
+      "icon": "/images/uploads/css3-svgrepo-com.svg",
+      "category": "Fluent"
+    }
+  ]
+}
