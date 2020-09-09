@@ -6,10 +6,10 @@ backend:
 
 media_folder: "images/uploads"
 extension: "json"
-format: "json" 
+format: "json"
 collections:
-  - name: "skills" 
-    label: "Skills" 
+  - name: "skills"
+    label: "Skills"
     folder: "_content/"
     create: true
     file: "skills.json"
@@ -18,15 +18,20 @@ collections:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Icon", name: "icon", widget: "image" }
-      - { label: "Align Content", name: "align", widget: "select", options: ["Fluent", "Good", "Learning"] }
-  - name: "projects" 
-      label: "Projects" 
-      folder: "_content/"
-      create: true
-      file: "projects.json"
-      slug: "{{slug}}"
-      fields:
-        - { label: "Live", name: "live", widget: "string" }
-        - { label: "Repo", name: "repo", widget: "string" }
-        - { label: "Body", name: "body", widget: "string" }
-        - { label: "Thumbnail", name: "thumbnail", widget: "image" }
+      - {
+          label: "Align Content",
+          name: "align",
+          widget: "select",
+          options: ["Fluent", "Good", "Learning"],
+        }
+  - name: "projects"
+    label: "Projects"
+    folder: "_content/"
+    create: true
+    file: "projects.json"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Live", name: "live", widget: "string" }
+      - { label: "Repo", name: "repo", widget: "string" }
+      - { label: "Body", name: "body", widget: "string" }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
