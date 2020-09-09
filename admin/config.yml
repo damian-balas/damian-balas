@@ -13,7 +13,7 @@ collections:
     name: "testimonials"
     widget: "list"
     create: true
-    file: 'test.json'
+    file: "test.json"
     extension: "json"
     format: "json"
     summary: "{{fields.quote}} - {{fields.author.name}}"
@@ -25,10 +25,8 @@ collections:
           default: "Everything is awesome!",
         }
       - {
-          label: Author,
-          name: author,
-          widget: object,
-          fields:
-            - { label: Name, name: name, widget: string, default: "Emmet" }
-            - { label: Avatar, name: avatar, widget: image }
+          label: Quotee,
+          name: quotee,
+          widget: string,
+          default: "Everything is awesome!",
         }
