@@ -8,34 +8,45 @@ media_folder: "images/uploads"
 extension: "json"
 format: "json"
 collections:
-  - name: "skill"
-    label: "Skill"
-    folder: "_content/"
-    extension: "json"
-    format: "json"
-    slug: "skill"
-    create: true
+  - label: "Home Section"
+    name: "sections"
     widget: "list"
     types:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Icon", name: "icon", widget: "image" }
-      - {
-          label: "Category",
-          name: "category",
-          widget: "select",
-          options: ["Fluent", "Good", "Learning"],
-        }
-  - name: "project"
-    label: "Project"
-    folder: "_content/"
-    extension: "json"
-    format: "json"
-    slug: "projects"
-    create: true
-    widget: "list"
-    types:
-      - { label: "Live", name: "live", widget: "string" }
-      - { label: "Repo", name: "repo", widget: "string" }
-      - { label: "Body", name: "body", widget: "string" }
-      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
+      - label: "Carousel"
+        name: "carousel"
+        widget: object
+        summary: "{{fields.header}}"
+        fields:
+          - {
+              label: Header,
+              name: header,
+              widget: string,
+              default: "Image Gallery",
+            }
+          - {
+              label: Template,
+              name: template,
+              widget: string,
+              default: "carousel.html",
+            }
+          - label: Images
+            name: images
+            widget: list
+            field: { label: Image, name: image, widget: image }
+      - label: "Spotlight"
+        name: "spotlight"
+        widget: object
+        fields:
+          - {
+              label: Header,
+              name: header,
+              widget: string,
+              default: "Spotlight",
+            }
+          - {
+              label: Template,
+              name: template,
+              widget: string,
+              default: "spotlight.html",
+            }
+          - { label: Text, name: text, widget: text, default: "Hello World" }
