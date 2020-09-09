@@ -35,11 +35,11 @@ collections:
     format: "json"
     slug: "projects"
     fields:
-      - label: "Skills"
-        name: "skills"
+      - label: "Projects"
+        name: "projects"
         widget: "list"
         fields:
-          - { label: "Live", name: "live", widget: "string" }
-          - { label: "Repo", name: "repo", widget: "string" }
+          - { label: "Live URL", name: "live", widget: "string" }
+          - { label: "Repo URL", name: "repo", widget: "string" }
           - { label: "Body", name: "body", widget: "string" }
           - { label: "Thumbnail", name: "thumbnail", widget: "image" }
