@@ -12,7 +12,6 @@ collections:
     label: "Skills"
     folder: "_content/"
     create: true
-    file: "skills.json"
     extension: "json"
     format: "json"
     slug: "skills"
@@ -31,7 +30,6 @@ collections:
     label: "Projects"
     folder: "_content/"
     create: true
-    file: "projects.json"
     extension: "json"
     format: "json"
     slug: "projects"
