@@ -16,21 +16,17 @@ collections:
     extension: "json"
     format: "json"
     slug: "skills"
-    fields:
-      - label: "Skills"
-        name: "skills"
-        widget: "list"
-        summary: "{{fields.name}}"
-        fields:
-          - { label: "Name", name: "name", widget: "string" }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Icon", name: "icon", widget: "image" }
-          - {
-              label: "Category",
-              name: "category",
-              widget: "select",
-              options: ["Fluent", "Good", "Learning"],
-            }
+    widget: "list"
+    widgets:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Icon", name: "icon", widget: "image" }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          options: ["Fluent", "Good", "Learning"],
+        }
   - name: "projects"
     label: "Projects"
     folder: "_content/"
