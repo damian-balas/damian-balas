@@ -16,7 +16,7 @@ collections:
     extension: "json"
     format: "json"
     slug: "skills"
-    field:
+    fields:
       - label: "Skills"
         name: "skills"
         widget: "list"
