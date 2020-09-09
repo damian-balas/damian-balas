@@ -5,29 +5,41 @@ backend:
   site_domain: zealous-swanson-69cd5f.netlify.com
 
 media_folder: "images/uploads"
-extension: "json"
-format: "json"
-create: true
 collections:
-  - label: "Testimonials"
-    name: "testimonials"
-    widget: "list"
+  - name: "skills"
+    label: "Skills"
+    folder: "_content/"
     create: true
-    file: 'test.json'
     extension: "json"
     format: "json"
-    summary: "{{fields.quote}} - {{fields.author.name}}"
+    slug: "skills"
     fields:
-      - {
-          label: Quote,
-          name: quote,
-          widget: string,
-          default: "Everything is awesome!"
-        }
-      - {
-          label: Author,
-          name: author,
-          widget: object,
-          fields:
-            - { label: Name, name: name, widget: string, default: "Emmet" }
-        }
+      - label: "Skills"
+        name: "skills"
+        widget: "list"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Icon", name: "icon", widget: "image" }
+          - {
+              label: "Category",
+              name: "category",
+              widget: "select",
+              options: ["Fluent", "Good", "Learning"],
+            }
+  - name: "projects"
+    label: "Projects"
+    folder: "_content/"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "projects"
+    fields:
+      - label: "Projects"
+        name: "projects"
+        widget: "list"
+        fields:
+          - { label: "Live URL", name: "live", widget: "string" }
+          - { label: "Repo URL", name: "repo", widget: "string" }
+          - { label: "Body", name: "body", widget: "string" }
+          - { label: "Thumbnail", name: "thumbnail", widget: "image" }
