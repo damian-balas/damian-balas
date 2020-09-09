@@ -9,8 +9,104 @@ const contact = document.querySelector(".contact");
 const contactText = document.querySelector(".contact__text");
 const contactForm = document.querySelector(".contact__form");
 const skillsSection = document.querySelector(".skills");
-const skills = document.querySelectorAll(".skill");
+let skills = document.querySelectorAll(".skill");
 const preloader = document.querySelector(".preloader");
+const fluent = document.querySelector(".skills__group--fluent");
+const good = document.querySelector(".skills__group--good");
+const learning = document.querySelector(".skills__group--learning");
+const portfolio = document.querySelector('.portfolio');
+
+// fetch content
+(async () => {
+  try {
+    const res = await fetch('./_content/skills.json');
+    const {skills: skills_arr, projects: projects_arr} = await res.json();
+
+    if (skills_arr?.length) {      
+      fluent.innerHTML = skills_arr.filter(({category}) => category === 'Fluent').map(
+        (skill) => `
+      <div class="skill" title="${skill.title}">
+        <img class="skill__image" src=".${skill.icon}" alt="${skill.title}" />
+        <span class="skill__name">${skill.name}</span>
+      </div>
+  `,
+      ).join('');
+
+      good.innerHTML = skills_arr
+        .filter(({ category }) => category === "Good")
+        .map(
+          (skill) => `
+      <div class="skill" title="${skill.title}">
+        <img class="skill__image" src=".${skill.icon}" alt="${skill.title}" />
+        <span class="skill__name">${skill.name}</span>
+      </div>
+  `,
+        )
+        .join("");
+
+        learning.innerHTML = skills_arr
+          .filter(({ category }) => category === "Learning")
+          .map(
+            (skill) => `
+      <div class="skill" title="${skill.title}">
+        <img class="skill__image" src=".${skill.icon}" alt="${skill.title}" />
+        <span class="skill__name">${skill.name}</span>
+      </div>
+  `,
+          )
+          .join("");
+    }
+
+    if(projects_arr?.length) {
+      portfolio.innerHTML = `<h2 class="portfolio__heading">My recent projects</h2>` + projects_arr.map(project => `
+        <div class="project">
+          <a
+            href="${project.live}"
+            rel="noopener"
+            target="_blank"
+            class="project__box-link"
+          >
+            <figure class="project__image">
+              <img
+                class="project__thumbnail"
+                src=".${project.thumbnail}"
+                alt=""
+              />
+              <figcaption class="project__figcaption">
+                <h3 class="project__title">
+                  ${project.body}
+                </h3>
+              </figcaption>
+            </figure>
+            <div class="project__overlay"></div>
+          </a>
+          <div class="project__links">
+            <a
+              class="hover-line"
+              rel="noopener"
+              target="_blank"
+              href="${project.live}"
+              >Live</a
+            >
+            <a
+              class="hover-line"
+              rel="noopener"
+              target="_blank"
+              href="${project.repo}"
+              >Code</a
+            >
+          </div>
+        </div>
+      `).join('');
+    }
+
+    skills = document.querySelectorAll(".skill");
+    animateItems();
+  } catch(err) {
+    console.error(err)
+  }
+})()
+
 
 // throttle
 function throttle(fn, wait) {
