@@ -7,26 +7,39 @@ backend:
 media_folder: "images/uploads"
 extension: "json"
 format: "json"
-create: true
 collections:
-  - label: "Testimonials"
-    name: "testimonials"
-    widget: "list"
+  - name: "skills"
+    label: "Skills"
+    folder: "_content/"
     create: true
-    file: "test.json"
+    file: "skills.json"
     extension: "json"
     format: "json"
-    summary: "{{fields.quote}} - {{fields.author.name}}"
+    slug: "skills.json"
+    field:
+      - label: "Skills"
+        name: "skills"
+        widget: "list"
+        fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Icon", name: "icon", widget: "image" }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          options: ["Fluent", "Good", "Learning"],
+        }
+  - name: "projects"
+    label: "Projects"
+    folder: "_content/"
+    create: true
+    file: "projects.json"
+    extension: "json"
+    format: "json"
+    slug: "projects.json"
     fields:
-      - {
-          label: Quote,
-          name: quote,
-          widget: string,
-          default: "Everything is awesome!",
-        }
-      - {
-          label: Quotee,
-          name: quotee,
-          widget: string,
-          default: "Everything is awesome!",
-        }
+      - { label: "Live", name: "live", widget: "string" }
+      - { label: "Repo", name: "repo", widget: "string" }
+      - { label: "Body", name: "body", widget: "string" }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
