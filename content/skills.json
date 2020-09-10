@@ -59,6 +59,12 @@
       "category": "Good",
       "icon": "/images/uploads/redux-svgrepo-com.svg",
       "title": "Redux"
+    },
+    {
+      "name": "Node.js",
+      "title": "Node.js",
+      "icon": "/images/uploads/node-dot-js-svgrepo-com.svg",
+      "category": "Learning"
     }
   ],
   "projects": [
