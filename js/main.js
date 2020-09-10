@@ -19,7 +19,7 @@ const portfolio = document.querySelector('.portfolio');
 // fetch content
 (async () => {
   try {
-    const res = await fetch('./_content/skills.json');
+    const res = await fetch('./content/skills.json');
     const {skills: skills_arr, projects: projects_arr} = await res.json();
 
     if (skills_arr?.length) {      
