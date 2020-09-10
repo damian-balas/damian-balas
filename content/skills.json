@@ -109,6 +109,12 @@
       "body": "My personal portfolio website.",
       "repo": "https://github.com/damian-balas/damian-balas/",
       "thumbnail": "/images/uploads/damian-balas.jfif"
+    },
+    {
+      "live": "https://damian-balas.github.io/star-wars-app/",
+      "body": "Learn more about your favorite Star Wars characters",
+      "thumbnail": "/images/uploads/swchar.jfif",
+      "repo": "https://github.com/damian-balas/star-wars-app"
     }
   ]
 }
