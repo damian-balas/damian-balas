@@ -81,16 +81,16 @@
       "thumbnail": "/images/uploads/grod-art.png"
     },
     {
-      "live": "https://damian-balas.github.io/speed-typing-game/",
-      "body": "It's a speed typing game with anti cheat system. How fast can you type?",
-      "repo": "https://github.com/damian-balas/speed-typing-game/",
-      "thumbnail": "/images/uploads/speed-typing-game.png"
-    },
-    {
       "live": "https://damian-balas.github.io/filterable-list/",
       "repo": "https://github.com/damian-balas/filterable-list/",
       "body": "Simple website that filters contacts. Made for fun and educational purposes.",
       "thumbnail": "/images/uploads/filterablelist.png"
+    },
+    {
+      "live": "https://damian-balas.github.io/speed-typing-game/",
+      "body": "It's a speed typing game with anti cheat system. How fast can you type?",
+      "repo": "https://github.com/damian-balas/speed-typing-game/",
+      "thumbnail": "/images/uploads/speed-typing-game.png"
     },
     {
       "live": "https://damian-balas.github.io/damian-balas/",

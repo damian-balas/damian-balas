@@ -29,7 +29,7 @@ collections:
             }
   - name: "projects"
     label: "Projects"
-    folder: "_content/"
+    folder: "content/"
     create: true
     extension: "json"
     format: "json"
