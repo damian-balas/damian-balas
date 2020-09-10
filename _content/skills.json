@@ -13,15 +13,15 @@
       "category": "Fluent"
     },
     {
-      "name": "RWD",
-      "title": "Responsive Web Design",
-      "icon": "/images/uploads/responsive-design.svg",
-      "category": "Fluent"
-    },
-    {
       "name": "SASS",
       "title": "Syntactically Awesome Style Sheets",
       "icon": "/images/uploads/sass-1.svg",
+      "category": "Fluent"
+    },
+    {
+      "name": "RWD",
+      "title": "Responsive Web Design",
+      "icon": "/images/uploads/responsive-design.svg",
       "category": "Fluent"
     },
     {
