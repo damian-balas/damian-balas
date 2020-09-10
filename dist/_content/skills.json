@@ -1,0 +1,108 @@
+{
+  "skills": [
+    {
+      "name": "HTML",
+      "title": "HyperText Markup Language",
+      "icon": "/images/uploads/html5-svgrepo-com.svg",
+      "category": "Fluent"
+    },
+    {
+      "name": "CSS",
+      "title": "Cascading Style Sheets",
+      "icon": "/images/uploads/css3-svgrepo-com.svg",
+      "category": "Fluent"
+    },
+    {
+      "name": "SASS",
+      "title": "Syntactically Awesome Style Sheets",
+      "icon": "/images/uploads/sass-1.svg",
+      "category": "Fluent"
+    },
+    {
+      "name": "RWD",
+      "title": "Responsive Web Design",
+      "icon": "/images/uploads/responsive-design.svg",
+      "category": "Fluent"
+    },
+    {
+      "name": "GIT",
+      "title": "GIT",
+      "icon": "/images/uploads/git.svg",
+      "category": "Good"
+    },
+    {
+      "name": "JS (ES6+)",
+      "title": "JavaScript ECMAScript 2015",
+      "icon": "/images/uploads/javascript-svgrepo-com.svg",
+      "category": "Good"
+    },
+    {
+      "name": "Accessibility",
+      "icon": "/images/uploads/wheelchair-svgrepo-com.svg",
+      "category": "Good",
+      "title": "Accessibility"
+    },
+    {
+      "name": "React",
+      "category": "Good",
+      "icon": "/images/uploads/react-svgrepo-com.svg",
+      "title": "React"
+    },
+    {
+      "name": "React Native",
+      "category": "Good",
+      "icon": "/images/uploads/react-svgrepo-com.svg",
+      "title": "React Native"
+    },
+    {
+      "name": "Redux",
+      "category": "Good",
+      "icon": "/images/uploads/redux-svgrepo-com.svg",
+      "title": "Redux"
+    }
+  ],
+  "projects": [
+    {
+      "live": "https://damian-balas.github.io/movie-app/",
+      "repo": "https://github.com/damian-balas/movie-app/",
+      "body": "You can search for movies. It uses omdbapi to fetch them. Project made to improve my React skills.",
+      "thumbnail": "/images/uploads/movie-app.png"
+    },
+    {
+      "live": "https://damian-balas.github.io/tanatos-studio/",
+      "body": "Simple, non-comercial, one-page website based on a free CYMU PSD template. Made for educational purposes only.",
+      "repo": "https://github.com/damian-balas/tanatos-studio/",
+      "thumbnail": "/images/uploads/tanatos-studio.png"
+    },
+    {
+      "live": "https://grodart.pl",
+      "repo": "https://grodart.pl",
+      "body": "E-commerce website made for a client. I've fully designed and implemented it from scratch using plain JS.",
+      "thumbnail": "/images/uploads/grod-art.png"
+    },
+    {
+      "live": "https://damian-balas.github.io/speed-typing-game/",
+      "body": "It's a speed typing game with anti cheat system. How fast can you type?",
+      "repo": "https://github.com/damian-balas/speed-typing-game/",
+      "thumbnail": "/images/uploads/speed-typing-game.png"
+    },
+    {
+      "live": "https://damian-balas.github.io/greenest/",
+      "repo": "https://github.com/damian-balas/greenest",
+      "body": "Find most polluted cities for Germany, Poland, Spain and France",
+      "thumbnail": "/images/uploads/greenest.jpg"
+    },
+    {
+      "live": "https://damian-balas.github.io/filterable-list/",
+      "repo": "https://github.com/damian-balas/filterable-list/",
+      "body": "Simple website that filters contacts. Made for fun and educational purposes.",
+      "thumbnail": "/images/uploads/filterablelist.png"
+    },
+    {
+      "live": "https://damian-balas.github.io/damian-balas/",
+      "body": "My personal portfolio website.",
+      "repo": "https://github.com/damian-balas/damian-balas/",
+      "thumbnail": "/images/uploads/damian-balas.jfif"
+    }
+  ]
+}
