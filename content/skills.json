@@ -1,0 +1,10 @@
+{
+  "skills": [
+    {
+      "name": "test",
+      "title": "test",
+      "category": "Fluent",
+      "icon": "/images/uploads/git.svg"
+    }
+  ]
+}
