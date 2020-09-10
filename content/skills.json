@@ -97,6 +97,12 @@
       "body": "My personal portfolio website.",
       "repo": "https://github.com/damian-balas/damian-balas/",
       "thumbnail": "/images/uploads/damian-balas.jfif"
+    },
+    {
+      "live": "https://damian-balas.github.io/greenest/",
+      "repo": "https://github.com/damian-balas/greenest",
+      "body": "Find most polluted cities for Germany, Poland, Spain and France",
+      "thumbnail": "/images/uploads/greenest.jpg"
     }
   ]
 }
