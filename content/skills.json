@@ -71,6 +71,12 @@
       "title": "Next.js",
       "category": "Learning",
       "icon": "/images/uploads/next-js-seeklogo.com.svg"
+    },
+    {
+      "name": "MongoDB",
+      "title": "MongoDB",
+      "category": "Learning",
+      "icon": "/images/uploads/mongodb-svgrepo-com.svg"
     }
   ],
   "projects": [
