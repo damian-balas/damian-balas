@@ -65,6 +65,12 @@
       "title": "Node.js",
       "icon": "/images/uploads/node-dot-js-svgrepo-com.svg",
       "category": "Learning"
+    },
+    {
+      "name": "Next.js",
+      "title": "Next.js",
+      "category": "Learning",
+      "icon": "/images/uploads/next-js-seeklogo.com.svg"
     }
   ],
   "projects": [
