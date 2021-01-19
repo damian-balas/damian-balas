@@ -61,22 +61,10 @@
       "title": "Redux"
     },
     {
-      "name": "Node.js",
-      "title": "Node.js",
-      "icon": "/images/uploads/node-dot-js-svgrepo-com.svg",
-      "category": "Learning"
-    },
-    {
-      "name": "Next.js",
-      "title": "Next.js",
+      "name": "TypeScript",
+      "title": "TypeScript",
       "category": "Learning",
-      "icon": "/images/uploads/next-js-seeklogo.com.svg"
-    },
-    {
-      "name": "MongoDB",
-      "title": "MongoDB",
-      "category": "Learning",
-      "icon": "/images/uploads/mongodb-svgrepo-com.svg"
+      "icon": "/images/uploads/typescript-svgrepo-com.svg"
     }
   ],
   "projects": [
