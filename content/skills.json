@@ -65,6 +65,12 @@
       "title": "TypeScript",
       "category": "Learning",
       "icon": "/images/uploads/typescript-svgrepo-com.svg"
+    },
+    {
+      "name": "NEXT.JS",
+      "title": "NEXT.JS",
+      "icon": "/images/uploads/next-js-seeklogo.com.svg",
+      "category": "Learning"
     }
   ],
   "projects": [
