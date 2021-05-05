@@ -127,6 +127,12 @@
       "body": "My personal portfolio website.",
       "repo": "https://github.com/damian-balas/damian-balas/",
       "thumbnail": "/images/uploads/damian-balas.jfif"
+    },
+    {
+      "live": "https://jam-damian-balas.vercel.app/",
+      "repo": "https://github.com/damian-balas/jam",
+      "body": "You can add recipes in Contentful headless CMS and see them on the website. This project was made for educational purposes only.",
+      "thumbnail": "/images/uploads/png.png"
     }
   ]
 }
