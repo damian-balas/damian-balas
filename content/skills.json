@@ -71,6 +71,12 @@
       "title": "Next.js",
       "icon": "/images/uploads/next-js-seeklogo.com.svg",
       "category": "Learning"
+    },
+    {
+      "name": "Graphql",
+      "title": "Graphql",
+      "category": "Learning",
+      "icon": "/images/uploads/graphql-svgrepo-com.svg"
     }
   ],
   "projects": [
