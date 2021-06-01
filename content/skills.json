@@ -77,6 +77,12 @@
       "title": "Graphql",
       "category": "Learning",
       "icon": "/images/uploads/graphql-svgrepo-com.svg"
+    },
+    {
+      "name": "PostgreSQL",
+      "title": "PostgreSQL",
+      "icon": "/images/uploads/postgresql-svgrepo-com.svg",
+      "category": "Learning"
     }
   ],
   "projects": [
