@@ -83,6 +83,12 @@
       "title": "PostgreSQL",
       "icon": "/images/uploads/postgresql-svgrepo-com.svg",
       "category": "Learning"
+    },
+    {
+      "name": "NestJS",
+      "title": "NestJS",
+      "icon": "/images/uploads/nestjs-svgrepo-com.svg",
+      "category": "Learning"
     }
   ],
   "projects": [
