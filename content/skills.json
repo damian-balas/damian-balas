@@ -49,28 +49,28 @@
       "title": "React"
     },
     {
-      "name": "React Native",
-      "category": "Good",
-      "icon": "/images/uploads/react-svgrepo-com.svg",
-      "title": "React Native"
-    },
-    {
       "name": "Redux",
       "category": "Good",
       "icon": "/images/uploads/redux-svgrepo-com.svg",
       "title": "Redux"
     },
     {
+      "name": "React Native",
+      "category": "Good",
+      "icon": "/images/uploads/react-svgrepo-com.svg",
+      "title": "React Native"
+    },
+    {
       "name": "TypeScript",
       "title": "TypeScript",
-      "category": "Learning",
+      "category": "Good",
       "icon": "/images/uploads/typescript-svgrepo-com.svg"
     },
     {
       "name": "Next.js",
       "title": "Next.js",
       "icon": "/images/uploads/next-js-seeklogo.com.svg",
-      "category": "Learning"
+      "category": "Good"
     },
     {
       "name": "Graphql",
