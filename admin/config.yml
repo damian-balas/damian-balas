@@ -10,6 +10,7 @@ collections:
     label: "Skills"
     folder: "content/"
     create: true
+    identifier_field: "label"
     extension: "json"
     format: "json"
     slug: "skills"
@@ -30,6 +31,7 @@ collections:
   - name: "projects"
     label: "Projects"
     folder: "content/"
+    identifier_field: "label"
     create: true
     extension: "json"
     format: "json"
