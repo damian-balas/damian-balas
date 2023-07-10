@@ -145,6 +145,12 @@
       "repo": "https://github.com/damian-balas/jam",
       "body": "You can add recipes in Contentful headless CMS and see them on the website. This project was made for educational purposes only.",
       "thumbnail": "/images/uploads/png.png"
+    },
+    {
+      "live": "https://zarezerwujlowisko.pl/",
+      "repo": "https://zarezerwujlowisko.pl/",
+      "body": "My commercial project, where users can book a fishery. Written in React and NestJS",
+      "thumbnail": "/images/uploads/zrzut-ekranu-2023-07-10-230752.png"
     }
   ]
 }
