@@ -73,12 +73,6 @@
       "category": "Good"
     },
     {
-      "name": "Graphql",
-      "title": "Graphql",
-      "category": "Learning",
-      "icon": "/images/uploads/graphql-svgrepo-com.svg"
-    },
-    {
       "name": "PostgreSQL",
       "title": "PostgreSQL",
       "icon": "/images/uploads/postgresql-svgrepo-com.svg",
@@ -88,7 +82,7 @@
       "name": "NestJS",
       "title": "NestJS",
       "icon": "/images/uploads/nestjs-svgrepo-com.svg",
-      "category": "Learning"
+      "category": "Good"
     }
   ],
   "projects": [
